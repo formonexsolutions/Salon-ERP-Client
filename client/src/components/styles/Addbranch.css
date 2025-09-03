@@ -1,0 +1,334 @@
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 4px; 
+}
+
+.input-error {
+  border-color: red;
+}
+.main-container-alex1 {
+  display: flex;
+  flex-direction: column; 
+  background-color: transparent;
+  width: 100%;
+  
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px; 
+}
+
+.header-title-chris3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.Maindispalyflex1234 {
+  display: flex;
+  align-items: center; 
+  width: 100%;
+  max-width: 1000px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background-color: transparent;
+  padding: 20px;
+}
+
+.pranyuuuuu {
+  margin-right: 50px;
+}
+
+.form-container-jordan2 {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px;
+  width: 100%;
+}
+
+.input-row-taylor4 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.input-branch-name-pat5,
+.input-salon-name-jamie6,
+.input-city-morgan7,
+.input-area-casey8,
+.input-admin-name-dakota9,
+.input-phone-number-devon10,
+.input-password-avery11,
+.input-state-riley12,
+.input-start-time-reese13,
+.input-end-time-sam14 {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 7px;
+  font-size: 13px;
+  background-color: #f7f7f7;
+  width: 25%;
+}
+
+.input-branch-name-pat5::placeholder,
+.input-salon-name-jamie6::placeholder,
+.input-city-morgan7::placeholder,
+.input-area-casey8::placeholder,
+.input-admin-name-dakota9::placeholder,
+.input-phone-number-devon10::placeholder,
+.input-password-avery11::placeholder,
+.input-state-riley12::placeholder,
+.input-start-time-reese13::placeholder,
+.input-end-time-sam14::placeholder {
+  color: #666;
+  font-size: 16px
+  
+}
+
+.textarea-about-frankie16 {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #f7f7f7;
+  resize: none;
+  width: 50.7%;
+}
+
+.textarea-about-frankie16::placeholder {
+  color: #666;
+}
+
+.submit-button-jordan18 {
+  border: 1px solid dodgerblue;
+  border-radius: 4px;
+  padding: 8px;
+  background-color: dodgerblue;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  width: 110px;
+  margin-top: 0px;
+}
+.fgr89{
+padding: 5px;
+text-align: right;
+background-color: #ccc;
+
+
+}
+.submit-button-jordan18:hover {
+  background-color: dodgerblue;
+}
+
+.suggestions-container {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-height: 200px; 
+  overflow-y: auto; 
+  width: 40vh;
+  top: 55vh;
+  right: 62vh;
+}
+
+.suggestion {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.suggestion:hover {
+  background-color: #f0f0f0;
+}
+.textarea-address-frankie16 {
+  width: 51%; 
+  max-width: 100%; 
+  border: 1px solid #ccc;
+  height: auto; 
+  border-radius: 4px;
+  box-sizing: border-box; 
+  background-color: #f7f7f7;
+}
+
+
+
+
+@media (max-width: 767px) {
+  .form-container-jordan2 {
+    padding: 7px;
+  }
+  .textarea-address-frankie16 {
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid #ccc;
+    height: auto;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #f7f7f7;
+}
+  .input-row-taylor4 {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .pranyuuuuu {
+    margin-right: 0px;
+  }
+
+  .input-branch-name-pat5,
+  .input-salon-name-jamie6,
+  .input-city-morgan7,
+  .input-area-casey8,
+  .input-admin-name-dakota9,
+  .input-phone-number-devon10,
+  .input-password-avery11,
+  .input-state-riley12,
+  .input-start-time-reese13,
+  .input-end-time-sam14 {
+    width: 100%;
+    font-size: small;
+    padding: 6px;
+  }
+
+  .input-branch-name-pat5::placeholder,
+  .input-salon-name-jamie6::placeholder,
+  .input-city-morgan7::placeholder,
+  .input-area-casey8::placeholder,
+  .input-admin-name-dakota9::placeholder,
+  .input-phone-number-devon10::placeholder,
+  .input-password-avery11::placeholder,
+  .input-state-riley12::placeholder,
+  .input-start-time-reese13::placeholder,
+  .input-end-time-sam14::placeholder {
+    font-size: small;
+  }
+
+  .textarea-about-frankie16 {
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .textarea-about-frankie16::placeholder {
+    font-size: small;
+  }
+
+  .submit-button-jordan18 {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .header-title-chris3 {
+    font-size: 20px;
+  }
+
+  .suggestions-container {
+    width: calc(100% - 20px);
+    right: auto;
+    left: 0;
+  }
+
+  .form-container-jordan2 button {
+    width: 29vw;
+    font-size: small;
+    padding: 5px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .form-container-jordan2 {
+    padding: 7px;
+    width: 100%;
+  }
+
+  .input-row-taylor4 {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .pranyuuuuu {
+    margin-right: 0px;
+  }
+
+  .input-branch-name-pat5,
+  .input-salon-name-jamie6,
+  .input-city-morgan7,
+  .input-area-casey8,
+  .input-admin-name-dakota9,
+  .input-phone-number-devon10,
+  .input-password-avery11,
+  .input-state-riley12,
+  .input-start-time-reese13,
+  .input-end-time-sam14 {
+    width: 40%;
+    font-size: small;
+    padding: 6px;
+  }
+
+  .input-branch-name-pat5::placeholder,
+  .input-salon-name-jamie6::placeholder,
+  .input-city-morgan7::placeholder,
+  .input-area-casey8::placeholder,
+  .input-admin-name-dakota9::placeholder,
+  .input-phone-number-devon10::placeholder,
+  .input-password-avery11::placeholder,
+  .input-state-riley12::placeholder,
+  .input-start-time-reese13::placeholder,
+  .input-end-time-sam14::placeholder {
+    font-size: small;
+  }
+
+  .textarea-about-frankie16 {
+    font-size: 16px;
+    padding: 10px;
+    width: 82%;
+  }
+
+  .textarea-about-frankie16::placeholder {
+    font-size: small;
+  }
+
+  .suggestions-container {
+    width: calc(100% - 26px);
+    right: auto;
+    left: 0;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .Maindispalyflex1234 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pranyuuuuu {
+    margin-right: 0px;
+  }
+
+  .form-container-jordan2 {
+    padding: 7px;
+    width: 100%;
+  }
+
+  .input-row-taylor4 {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .img345dstr456 {
+    margin-top: 0px;
+  }
+
+  .suggestions-container {
+    width: calc(100% - 26px);
+    right: auto;
+    left: 0;
+  }
+}
+      

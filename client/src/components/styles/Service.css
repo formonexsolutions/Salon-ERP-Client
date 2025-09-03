@@ -1,0 +1,363 @@
+.service-form-container-sk141 {
+  width: 92%;
+  margin: 0 auto;
+
+  border: 1px solid #ccc;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  margin-left: 4%;
+  font-family: "Poppins";
+}
+.buttonrety567877.activate {
+  background-color: #007bff;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+  height: 4vh;
+  width: 10vh;
+}
+
+.buttonrety567877.deactivate {
+  background-color: rgb(205, 16, 16);
+  color: white;
+  padding: 2px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+  height: 4vh;
+  width: 15vh;
+}
+
+.changeedit248 {
+  display: flex;
+  flex-direction: row;
+}
+.sk1432s {
+  display: block;
+}
+.second-con678 {
+  margin: 10px;
+  margin-top: 3%;
+  margin-left: 9%;
+}
+.heading6789 {
+  padding: 8px;
+  background-color: #f0ecec;
+  box-shadow: 0px 0px 0px 1px bisque;
+  color: black;
+  font-size: 18px;
+  margin-top: 0px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  font-family: "poppins";
+}
+
+.container4901 {
+}
+.service-label-sk141 {
+  font-weight: normal;
+}
+.margin-left789 {
+  margin: 7px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.service-select-sk141 {
+  width: 35%;
+  padding: 6px;
+  margin-left: 15px;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.add-button-sk141 {
+  padding: 7px;
+  margin: 2px;
+
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: #0ca807;
+  color: #fff;
+  font-size: 0.9rem;
+  width: 80px;
+  text-align: center;
+  text-decoration: none;
+}
+.add-button-sk141:hover {
+  background-color: #0c5f0a;
+}
+.main-empee {
+  font-family: "Poppins";
+}
+.save-button-sk141 {
+  padding: 7px;
+  margin: 5px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: dodgerblue;
+  color: #fff;
+  font-size: 0.9rem;
+  font-family: "poppins";
+  font-weight: 300;
+  width: 70px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.add-edit-buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #d8d3d3;
+  margin: 7px;
+}
+.active-btn {
+  
+  background-color: red;
+  color: white;
+}
+
+.inactive-btn {
+  background-color: green;
+  color: white;
+}
+
+.table-saloon_service
+{
+  width: 98%;
+  margin-left: 2vh;
+}
+.entries-div121_service{
+  display: flex;
+  justify-content: space-between;
+  width: 98%;
+  margin-left: 2vh;
+  margin-top: 2vh;
+  gap: 0vh;
+  padding-bottom: 4vh;
+
+}
+
+.confirm-btn {
+  margin: 0 5px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.confirm-yes {
+  background-color: #28a745;
+  color: white;
+}
+
+.confirm-yes:hover {
+  background-color: #218838;
+}
+
+.confirm-no {
+  background-color: #dc3545;
+  color: white;
+}
+
+.confirm-no:hover {
+  background-color: #c82333;
+}
+
+.toast-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.toast-container p {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+}
+
+.toast-container button {
+  margin-top: 5px;
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 431px) {
+  .service-form-container-sk141 {
+    width: 100%;
+    margin: 0;
+    margin-top: 2%;
+
+    border: 1px solid #ccc;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-left: 0%;
+  }
+  .changeedit248 {
+    display: flex;
+    flex-direction: row;
+  }
+  .sk1432s {
+    display: block;
+  }
+  .entries-div121_service{
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    margin-left: 2vh;
+    margin-top: 2vh;
+    gap: 0vh;
+    padding-bottom: 0vh;
+  
+  }
+  .table-saloon_service {
+    width: 98%;
+    margin-left: 1vh;
+}
+  .second-con678 {
+    margin: 10px;
+    margin-top: 3%;
+    margin-left: 1% !important;
+  }
+  .heading6789 {
+    background-color: #f0ecec;
+    text-align: left;
+    font-size: small;
+    padding: 3px;
+    font-weight: 500;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 9px #ccc;
+  }
+
+  .service-label-sk141 {
+    font-weight: normal !important;
+    text-align: left;
+    font-size: small;
+  }
+  .margin-left789 {
+    margin: 7px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .service-select-sk141 {
+    width: 65%;
+
+    font-size: small;
+    padding: 7px;
+    margin-left: 9px;
+    font-size: small;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .add-button-sk141 {
+    padding: 5px;
+    margin: 5px;
+
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: dodgerblue;
+    color: #fff;
+    font-size: small;
+    width: 70px;
+    text-align: center;
+    text-decoration: none;
+  }
+  .add-button-sk141:hover {
+    background-color: #0c5f0a;
+  }
+
+  .save-button-sk141 {
+    padding: 5px;
+    margin: 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    font-size: small;
+    width: 70px;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .add-edit-buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #d8d3d3;
+    margin: 7px;
+  }
+  .tble-overflow12555{
+    width: 98%;
+    overflow: scroll;
+   }
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1023px){
+
+  .service-form-container-sk141 {
+    width: 94%;
+    margin-left: 3%;
+  
+  }
+  .button456 {
+    margin-top: 0%;
+  }
+  .container490 {
+    width: 140px !important;
+  }
+  .container4901 {
+    display: flex;
+    flex-direction: column;
+  }
+  .flex1433456 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .end865 {
+    display: flex;
+    align-items: center;
+  }
+  .flex-1095 {
+    display: flex;
+    align-items: flex-start !important;
+  }
+  .tble-overflow12555{
+    width: 98%;
+    overflow: scroll;
+   }
+   .entries-div121_service {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 98%;
+    margin-left: 2vh;
+    margin-top: 2vh;
+    gap: 0vh;
+    padding-bottom: 1vh;
+}
+}

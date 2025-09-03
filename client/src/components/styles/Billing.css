@@ -1,0 +1,1317 @@
+.billing-form-sk142s {
+  width: 92%;
+  margin-left: 4%;
+
+  background-color: #fdfcfc;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins";
+}
+
+.lable90 {
+  width: 130px;
+  text-align: left;
+  margin-right: 8px;
+  margin-top: 10px;
+}
+
+.heading678 {
+  background-color: #f0ecec;
+  padding: 7px;
+  font-weight: 500;
+  margin-top: 0px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 6px #ccc;
+  font-size: 18px;
+  font-family: "poppins";
+}
+
+.small-container678 {
+  padding: 10px;
+}
+
+.form-group-label234 {
+  display: flex;
+}
+
+.form-groupsk142s {
+  display: flex;
+}
+.form-groupsk14210s {
+  display: flex;
+}
+.addnewsk142s:hover {
+  background-color: #126711;
+}
+
+.addnewsk142s {
+  background-color: #28b932;
+  color: #fff;
+  padding: 5px;
+  margin: 10px;
+  font-size: small;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 100px;
+  transition: background-color 0.3s ease;
+}
+
+.addnewsk142sd:hover {
+  background-color: #126711;
+}
+
+.addnewsk142sd {
+  background-color: #28b932;
+  color: #fff;
+  padding: 5px;
+  margin: 10px;
+  font-size: small;
+  font-family: "poppins";
+  font-weight: 300;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+
+  transition: background-color 0.3s ease;
+}
+
+.addnewsk1445 {
+  background-color: #28b932;
+  color: #fff;
+  padding: 7px;
+  margin: 5px;
+  font-size: small;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 70px;
+  transition: background-color 0.3s ease;
+}
+
+.cancelnewsk1445 {
+  background-color: rgb(205, 16, 16);
+  color: #fff;
+  padding: 7px;
+  margin: 5px;
+  font-size: small;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 70px;
+  transition: background-color 0.3s ease;
+}
+.flex1100 {
+  display: flex;
+}
+.bnsk142datesinput89 {
+  width: 150px;
+  font-size: small;
+  padding: 5px;
+  height: 35px;
+  margin: 0px;
+  margin-left: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.lable-width567 {
+  width: 180px;
+  text-align: right;
+}
+.button45678 {
+  background-color: transparent;
+  color: black;
+  font-size: 20px;
+  border: none;
+}
+.cross-btn890 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+.servicesk142s {
+  display: flex;
+}
+
+.billing-form-sk142s {
+  appearance: none;
+
+  background-size: 20px;
+}
+
+.customer-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.customer-popup .form-actions {
+  text-align: right;
+}
+.bill-no12345 {
+  width: 80px;
+  padding-top: 10px;
+}
+
+.heading3 {
+  font-size: 1.5rem;
+}
+
+.optionselect789 {
+  width: 40%;
+  padding: 5px;
+  font-size: 0.9rem;
+
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.optionselect7899 {
+  width: 40%;
+  padding: 5px;
+}
+
+.service-row {
+  display: flex;
+  align-items: center;
+}
+
+.items-container {
+  margin-top: 10px;
+}
+
+.item-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.item-row-select67 {
+  padding: 5px;
+  display: flex;
+  border-radius: 4px;
+}
+.input-change789 {
+  width: 11vw !important;
+  margin: 4px;
+  padding: 4px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.options678 {
+  width: 302px;
+  padding: 5px;
+  margin: 4px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.item-row {
+  width: 80px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.item-row {
+  width: 80px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.itemsk142s {
+  display: flex;
+}
+
+.item-row {
+  width: 80px;
+  padding: 5px;
+  border-radius: 4px;
+  text-align: right;
+}
+.columns456 {
+  display: flex;
+  flex-direction: column;
+}
+.changesize567 {
+  padding: 5px;
+  width: 364px;
+  margin: 5px;
+  font-size: 0.9rem;
+  margin-left: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.warning1 {
+  position: relative;
+  top: 1rem;
+  font-size: 12px;
+}
+.delete-buttonsk142s {
+  background-color: rgb(205, 16, 16);
+  color: #fff;
+  border: none;
+  font-size: 0.9rem;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 8px;
+  width: 80px;
+  padding: 6px;
+}
+.save-btn456 {
+  background-color: #ccc;
+  display: flex;
+  justify-content: flex-end;
+}
+.delete-buttonsk1445 {
+  background-color: rgb(205, 16, 16);
+  color: #fff;
+  border: none;
+  font-size: 0.9rem;
+
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 8px;
+  width: 70px;
+  height: 33px;
+  margin-top: 4px;
+}
+.save-btn2345 {
+  background-color: #0ca807;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 7px;
+  width: 85px;
+}
+.btn-change234 {
+  display: flex;
+  justify-content: center;
+  margin-top: 6%;
+}
+.save-btn2345:hover {
+  background-color: #0c5f0a;
+}
+
+.delete-buttonsk142s:hover {
+  background-color: #cc0000;
+}
+.bnsk142s {
+  display: flex;
+}
+.bnsk142sinput {
+  width: 300px;
+  padding: 5px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #e9e5e5;
+}
+.bnsk142sinput89 {
+  width: 300px;
+  padding: 5px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.bill-no123 {
+  font-size: 16px;
+  padding-top: 10px;
+}
+.bnsk142sinput89 {
+  width: 200px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 0.9rem;
+}
+.totalbillsk142s {
+  font-size: 0.9rem;
+  width: 200px;
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.dis-sk142s {
+  width: 100px;
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.form-group-popup89 {
+  display: flex;
+}
+
+.input-popup678 {
+  font-size: 0.9rem;
+  width: 250px;
+
+  padding: 5px;
+  margin-top: 6px;
+  margin-bottom: 0px !important;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.input-popup6789 {
+  width: 250px;
+  padding: 4px;
+  margin-top: 6px;
+  margin-bottom: 0px !important;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.labelchange5678 {
+  text-align: left;
+}
+.input-popup-date45 {
+  width: 150px;
+  padding: 6px;
+  margin-top: 8px;
+  height: 35px;
+  font-size: small;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.plusk142s {
+  font-size: larger;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 431px) {
+  .addnewsk142sd {
+    background-color: #28b932;
+    color: #fff;
+    padding: 5px;
+    margin: 10px;
+    font-size: x-small;
+    font-family: "poppins";
+    font-weight: 300;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 0px;
+
+    transition: background-color 0.3s ease;
+  }
+  .form-groupsk14210s {
+    display: flex;
+    flex-direction: column;
+  }
+  .lable90 {
+    width: 100%;
+    margin-right: 0;
+    text-align: left;
+  }
+  .flex1100 {
+    display: flex;
+    flex-direction: column;
+  }
+  .bnsk142s {
+    display: flex;
+    flex-direction: column;
+  }
+  .form-groupsk142s {
+    display: flex;
+    flex-direction: column;
+  }
+  .bill-no123,
+  .bnsk142sinput89 {
+    display: flex;
+    flex-direction: row;
+  }
+  .heading3,
+  .button45678 {
+    font-size: 100%;
+  }
+
+  .changesize567,
+  .optionselect789,
+  .optionselect7899,
+  .input-change789,
+  .options678,
+  .item-row-select67,
+  .input-popup678,
+  .input-popup6789,
+  .input-popup-date45 {
+    width: 100%;
+    display: flex;
+  }
+  .billing-form-sk142s {
+    width: 100%;
+    margin-left: 0%;
+    margin: 0 auto;
+    background-color: #fdfcfc;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .lable90 {
+    width: 85px !important;
+    text-align: left;
+    margin-right: 8px;
+    margin-top: 10px;
+    font-size: smaller;
+  }
+
+  .heading678 {
+    background-color: #f0ecec;
+    padding: 3px;
+    font-size: small;
+    font-weight: 500;
+    margin-top: 0px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 6px #ccc;
+  }
+
+  .small-container678 {
+    padding: 10px;
+  }
+
+  .form-group-label234 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-groupsk142s {
+    display: flex;
+  }
+  .addnewsk142s:hover {
+    background-color: #126711;
+  }
+
+  .addnewsk142s {
+    background-color: #28b932;
+    color: #fff;
+    padding: 6px;
+    margin: 4px;
+    margin-left: 0px;
+    font-size: x-small;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 85px;
+    transition: background-color 0.3s ease;
+  }
+
+  .addnewsk1445 {
+    background-color: dodgerblue;
+    color: #fff;
+    padding: 7px;
+    margin: 5px;
+    font-size: 13px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 65px;
+    transition: background-color 0.3s ease;
+  }
+
+  .cancelnewsk1445 {
+    background-color: #d94343;
+    color: #fff;
+    padding: 6px;
+    margin: 5px;
+    font-size: 12px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 60px;
+    transition: background-color 0.3s ease;
+  }
+
+  .lable-width567 {
+    width: 180px;
+    text-align: right;
+  }
+  .button45678 {
+    background-color: transparent;
+    color: black;
+    font-size: 20px;
+    border: none;
+  }
+  .cross-btn890 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 20px;
+  }
+  .servicesk142s {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .customer-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 95%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+
+  .customer-popup .form-actions {
+    text-align: right;
+  }
+  .bill-no12345 {
+    width: 80px;
+    padding-top: 10px;
+  }
+
+  .heading3 {
+    font-size: 20px;
+  }
+
+  .optionselect789 {
+    width: 60px;
+    height: 27px;
+    font-size: x-small;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .optionselect7899 {
+    width: 40%;
+    padding: 5px;
+  }
+
+  .service-row {
+    display: flex;
+    align-items: center;
+  }
+
+  .items-container {
+    margin-top: 10px;
+  }
+
+  .item-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .item-row-select67 {
+    padding: 0px;
+    display: flex;
+    border-radius: 4px;
+  }
+  .input-change789 {
+    width: 45px;
+    padding: 6px;
+    font-size: small;
+    height: 27px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin: 2px;
+  }
+  .options678 {
+    width: 45vw;
+    padding: 4px;
+    margin: 2px;
+    margin-left: 0px;
+    font-size: small;
+    height: 27px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .item-row {
+    width: 80px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .item-row {
+    width: 80px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .itemsk142s {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item-row {
+    width: 80px;
+    padding: 5px;
+    border-radius: 4px;
+    text-align: right;
+  }
+  .columns456 {
+    display: flex;
+    flex-direction: column;
+  }
+  .changesize567 {
+    font-size: 13px;
+    padding: 3px;
+    width: 136px;
+    margin: 1px;
+    margin-left: 0px;
+    font-size: small;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .delete-buttonsk142s {
+    background-color: #ff5555;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 3px;
+    font-size: x-small;
+    width: 50px;
+    padding: 6px;
+  }
+  .save-btn456 {
+    background-color: #ccc;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .delete-buttonsk1445 {
+    background-color: #ff5555;
+    color: rgb(10, 10, 10) 717;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 1px;
+    width: 50px;
+    height: 27px;
+    font-size: x-small;
+    margin-top: 2px;
+  }
+  .save-btn2345 {
+    background-color: #0ca807;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 4px;
+    font-size: x-small;
+    width: 60px;
+  }
+  .btn-change234 {
+    display: flex;
+    justify-content: center;
+    margin-top: 6%;
+  }
+  .save-btn2345:hover {
+    background-color: #0c5f0a;
+  }
+
+  .delete-buttonsk142s:hover {
+    background-color: #cc0000;
+  }
+  .bnsk142s {
+    display: flex;
+    margin-top: -20px;
+  }
+  .bnsk142sinput {
+    width: 300px;
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #e9e5e5;
+  }
+  .bnsk142sinput89 {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 6px;
+    height: auto;
+    margin: 0px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .bnsk142datesinput89 {
+    width: 150px;
+    font-size: small;
+    padding: 5px;
+    height: 30px;
+    margin: 0px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .bill-no123 {
+    padding-top: 10px;
+    font-size: 15px;
+  }
+
+  .totalbillsk142s {
+    width: 45vw;
+    height: auto;
+    margin: 0px;
+    font-size: small;
+    margin-left: 0px;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .dis-sk142s {
+    width: 100px;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .form-group-popup89 {
+    display: flex;
+  }
+
+  .input-popup678 {
+    height: 30px;
+    padding: 4px;
+    margin-top: 6px;
+    margin-bottom: 0px !important;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .input-popup678::placeholder {
+    font-size: x-small;
+  }
+  .input-popup6789 {
+    width: 250px;
+    padding: 4px;
+    margin-top: 6px;
+    margin-bottom: 0px !important;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .labelchange5678 {
+    text-align: left;
+  }
+  .input-popup-date45 {
+    width: 150px;
+    padding: 6px;
+    margin-top: 8px;
+    height: 30px;
+    font-size: small;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .plusk142s {
+    font-size: larger;
+  }
+}
+@media only screen and (min-width: 376px) and (max-width: 431px) {
+  .billing-form-sk142s {
+    width: 100% !important;
+    margin-left: 0% !important;
+  }
+  .addnewsk142sd {
+    background-color: #28b932;
+    color: #fff;
+    padding: 5px;
+    margin: 10px;
+    font-size: x-small;
+    font-family: "poppins";
+    font-weight: 300;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 0px;
+
+    transition: background-color 0.3s ease;
+  }
+  .lable90 {
+    width: 100%;
+    margin-right: 0;
+    text-align: left;
+  }
+  .flex1100 {
+    display: flex;
+    flex-direction: column;
+  }
+  .bnsk142s {
+    display: flex;
+    flex-direction: column;
+  }
+  .form-groupsk142s {
+    display: flex;
+    flex-direction: column;
+  }
+  .bill-no123,
+  .bnsk142sinput89 {
+    display: flex;
+    flex-direction: row;
+  }
+  .heading3,
+  .button45678 {
+    font-size: 100%;
+  }
+
+  .changesize567,
+  .optionselect789,
+  .optionselect7899,
+  .input-change789,
+  .options678,
+  .item-row-select67,
+  .input-popup678,
+  .input-popup6789,
+  .input-popup-date45 {
+    width: 100%;
+    display: flex;
+  }
+  .billing-form-sk142s {
+    width: 90%;
+    margin-left: 5%;
+    margin: 0 auto;
+    background-color: #fdfcfc;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .lable90 {
+    width: 85px !important;
+    text-align: left;
+    margin-right: 8px;
+    margin-top: 10px;
+    font-size: smaller;
+  }
+
+  .heading678 {
+    background-color: #f0ecec;
+    padding: 5px;
+    font-size: small;
+    font-weight: 500;
+    margin-top: 0px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 6px #ccc;
+  }
+
+  .small-container678 {
+    padding: 10px;
+  }
+
+  .form-group-label234 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-groupsk142s {
+    display: flex;
+  }
+  .addnewsk142s:hover {
+    background-color: #126711;
+  }
+
+  .addnewsk142s {
+    background-color: #28b932;
+    color: #fff;
+    padding: 5px;
+    margin: 10px;
+    margin-left: 0px;
+    font-size: x-small;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 75px;
+    transition: background-color 0.3s ease;
+  }
+  .bnsk142datesinput89 {
+    width: 150px;
+    font-size: small;
+    padding: 5px;
+    height: 30px;
+    margin: 0px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .addnewsk1445 {
+    background-color: #1183e1;
+    color: #fff;
+    padding: 7px;
+    margin: 5px;
+    font-size: small;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 70px;
+    transition: background-color 0.3s ease;
+  }
+
+  .cancelnewsk1445 {
+    background-color: #ff5555;
+    color: #fff;
+    padding: 7px;
+    margin: 5px;
+    font-size: small;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 70px;
+    transition: background-color 0.3s ease;
+  }
+
+  .lable-width567 {
+    width: 180px;
+    text-align: right;
+  }
+  .button45678 {
+    background-color: transparent;
+    color: black;
+    font-size: 20px;
+    border: none;
+  }
+  .cross-btn890 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 20px;
+  }
+  .servicesk142s {
+    display: flex;
+    flex-direction: column;
+  }
+  .form-groupsk14210s {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .billing-form-sk142s {
+    appearance: none;
+
+    background-size: 20px;
+    cursor: pointer;
+  }
+
+  .customer-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 95%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+
+  .customer-popup .form-actions {
+    text-align: right;
+  }
+  .bill-no12345 {
+    width: 80px;
+    padding-top: 10px;
+  }
+
+  .heading3 {
+    font-size: x-large;
+  }
+
+  .optionselect789 {
+    width: 40%;
+    height: 27px;
+    font-size: small;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .optionselect7899 {
+    width: 40%;
+    padding: 5px;
+  }
+
+  .service-row {
+    display: flex;
+    align-items: center;
+  }
+
+  .items-container {
+    margin-top: 10px;
+  }
+
+  .item-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .item-row-select67 {
+    padding: 0px;
+    display: flex;
+    border-radius: 4px;
+  }
+  .input-change789 {
+    width: 60px;
+    margin: 2px;
+    padding: 4px;
+    height: 28px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .options678 {
+    width: 125px;
+    padding: 5px;
+    margin: 2px;
+    margin-left: 0px;
+    font-size: small;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .item-row {
+    width: 80px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .item-row {
+    width: 80px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .itemsk142s {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item-row {
+    width: 80px;
+    padding: 5px;
+    border-radius: 4px;
+    text-align: right;
+  }
+  .columns456 {
+    display: flex;
+    flex-direction: column;
+  }
+  .changesize567 {
+    padding: 3px;
+    width: 200px;
+    margin: 5px;
+    margin-left: 0px;
+    font-size: small;
+
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .delete-buttonsk142s {
+    background-color: #ff5555;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 3px;
+    font-size: x-small;
+    width: 50px;
+    padding: 6px;
+  }
+  .save-btn456 {
+    background-color: #ccc;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .delete-buttonsk1445 {
+    background-color: #ff5555;
+    color: rgb(10, 10, 10) 717;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 3px;
+    width: 50px;
+    height: 28px;
+    font-size: small;
+    margin-top: 1px;
+  }
+  .save-btn2345 {
+    background-color: #0ca807;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 4px;
+    font-size: small;
+    width: 60px;
+  }
+  .btn-change234 {
+    display: flex;
+    justify-content: center;
+    margin-top: 6%;
+  }
+  .save-btn2345:hover {
+    background-color: #0c5f0a;
+  }
+
+  .delete-buttonsk142s:hover {
+    background-color: #cc0000;
+  }
+  .bnsk142s {
+    display: flex;
+    margin-top: -30px;
+  }
+  .bnsk142sinput {
+    width: 300px;
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #e9e5e5;
+  }
+  .bnsk142sinput89 {
+    width: 290px;
+    font-size: small;
+    padding: 5px;
+    height: 30px;
+    margin: 0px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .bill-no123 {
+    padding-top: 10px;
+    font-size: smaller;
+  }
+
+  .totalbillsk142s {
+    width: 100px;
+    height: 30px;
+    margin: 10px;
+    margin-left: 0px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .dis-sk142s {
+    width: 100px;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .form-group-popup89 {
+    display: flex;
+  }
+
+  .input-popup678 {
+    height: 30px;
+    padding: 4px;
+    margin-top: 6px;
+    margin-bottom: 0px !important;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .input-popup6789 {
+    padding: 4px;
+    margin-top: 6px;
+    margin-bottom: 0px !important;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .labelchange5678 {
+    text-align: left;
+  }
+  .input-popup-date45 {
+    width: 150px;
+    padding: 6px;
+    margin-top: 8px;
+    height: 30px;
+    font-size: small;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .plusk142s {
+    font-size: larger;
+  }
+}
+
+@media only screen and (min-width: 432px) and (max-width: 769px) {
+  .flex1100 {
+    display: flex;
+  }
+  .bill-no123 {
+    padding-top: 10px;
+  }
+  .lable90 {
+    width: 110px;
+    margin-right: 0;
+    text-align: left;
+  }
+
+  .bnsk142s {
+    display: flex;
+  }
+  .lable-width567 {
+    width: 150px;
+    text-align: left;
+  }
+  .form-groupsk142s {
+    display: flex;
+  }
+  .form-groupsk14210s {
+    display: flex;
+    flex-direction: column;
+  }
+  .width8901 {
+    width: 150px !important;
+  }
+  .bill-no12345 {
+    width: 50px;
+    padding-top: 10px;
+  }
+  .bill-no123,
+  .bnsk142sinput89 {
+    display: flex;
+    flex-direction: row;
+    font-size: 13px;
+  }
+
+  .changesize567,
+  .optionselect789,
+  .optionselect7899,
+  .input-change789,
+  .options678,
+  
+  .input-popup678,
+  .input-popup6789,
+  .input-popup-date45 {
+    width: auto;
+  }
+  .item-row-select67{
+
+  }
+  .billing-form-sk142s {
+    width: 94%;
+    margin-left: 3%;
+
+    background-color: #fdfcfc;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: "Poppins";
+  }
+  .bnsk142datesinput89 {
+    width: 150px;
+    font-size: small;
+    padding: 5px;
+    height: 30px;
+    margin: 0px;
+    margin-left: 13px;
+    margin-top: 9px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+}

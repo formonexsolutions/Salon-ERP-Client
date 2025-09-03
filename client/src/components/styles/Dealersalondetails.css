@@ -1,0 +1,350 @@
+/* Container for the salon details page */
+.dashboard-container-unique {
+    background-image: url("../images/dealers-bg.jpg");
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Navbar styling */
+  .navbar-unique {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #282c34;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    animation: slideInDown-unique 0.6s ease-out;
+  }
+  
+  .navbar-title-unique {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 1rem;
+  }
+  
+  .orders-count-unique {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 1rem;
+  }
+  
+  .user-icon-unique {
+    color: white;
+    font-size: 2.2rem;
+  }
+  
+  .user-icon-unique:hover {
+    transform: scale(1.2);
+  }
+  
+  .navbar-actions-unique {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .notifications-icon-unique {
+    color: white;
+    font-size: 1.8rem;
+    animation: shakeIcon-unique 0.3s ease-in-out infinite alternate;
+  }
+  
+  /* Dashboard Content */
+  .content-unique {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 0px;
+  }
+  
+  .table-title-unique {
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+  .salon-name-unique {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0px;
+    margin-bottom: 20px;
+  }
+  
+  /* Orders Section */
+  .orders-section-unique {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .order-button-unique {
+    /* height: 3rem; */
+    font-size: 1.1rem;
+    background-color: #0056b3;
+    color: #ffffff;
+    border: 1px solid white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+  .gap89{
+    display: flex;
+    gap: 1rem;
+  }
+  .order-button-unique:hover {
+    background-color: rgba(33, 161, 241, 0.8);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Details Section */
+  .details-section-unique {
+    width: 100%;
+    backdrop-filter: blur(30px);
+    border: 1px solid white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .a675{
+    text-decoration: none;
+    color: #64a3f3;
+    cursor: pointer;
+  }
+  .date-input {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 4px;
+    font-size: 15px;
+    border-radius: 6px;
+    width: 60%;
+    box-sizing: border-box;
+  }
+  
+  .date-input::placeholder {
+    color: #ccc; /* Placeholder color, optional */
+  }
+  
+  .date-input::-webkit-calendar-picker-indicator {
+    filter: invert(100%); /* Makes the calendar icon white */
+  }
+  
+  .date-input:focus {
+    border-color: #fff; /* Keep white border on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.3); /* White shadow on focus */
+  }
+   
+  .select45{
+    width: 9vw;
+    color: white;
+    padding: 5px;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 6px;
+  }
+  .option00{
+    padding: 5px;
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+  }
+  .orders-table-unique {
+    background: #151414;
+    width: 100%;
+    border-spacing: 0px;
+    
+    overflow: hidden;
+    border: 1px solid white;
+    /* border-radius: 8px; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .orders-table-unique img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+  
+  .table-header-unique {
+    background-color: #0056b3;
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+    font-size: 18px;
+    border: 1px solid #ddd;
+  }
+  
+  .table-data-unique {
+    color: white;
+    padding: 7px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  /* Back button styling */
+  .back-button-unique {
+    border: 1px solid white;
+    background-color: rgb(234, 28, 28);
+    color: #fff;
+    /* border: none; */
+    padding: 8px 15px;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    /* margin-bottom: 20px; */
+    /* margin-left: 900px; */
+  }
+  
+  .back-button-unique:hover {
+    background-color: red;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  .gap930{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .date-filters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .date-filters label {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+    /* margin-right: 20px; */
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    /* text-align: right; */
+    width: 15vw;
+  }
+  .datefilters56{
+    display: flex;
+    justify-content: space-between;
+  }
+  /* .date-filters  {
+    padding: 8px 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #555;
+    background-color: #f9f9f9;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+   */
+  .date-filters :hover {
+    border-color: #888;
+  }
+  
+  .date-filters :focus {
+    border-color: #007bff;
+  }
+  
+  .date-filters ::-webkit-calendar-picker-indicator {
+    color: #007bff;
+    cursor: pointer;
+  }
+  /* Dealersalondetails.css */
+.popup-overlay51 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-content51 {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 90%;
+  max-width: 1150px;
+}
+
+.details-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.details-table th, .details-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.details-table th {
+  background-color: #f4f4f4;
+}
+.hii_button
+{
+  text-align: center;
+}
+.close-popup-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.close-popup-button:hover {
+  background-color: #0056b3;
+}
+
+.update-popup-button{
+  padding: 5px 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .gap930{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .gap89 {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      margin-top: 1%;
+  }
+
+  .select45{
+    width: 28vw;
+    color: white;
+    padding: 5px;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 6px;
+  }
+  
+  }
+  

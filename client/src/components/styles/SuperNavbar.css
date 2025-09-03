@@ -1,0 +1,116 @@
+
+.header_part_log {
+    display: flex;
+    padding: 10px;
+    background-color:rgb(8, 49, 119) !important;
+    align-items: center;
+  }
+  
+  .text_header_log {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .ijuiyuhjt
+  {
+    margin-top: 10px;
+  }
+  .jjnhjjgjh
+  {
+    margin-top: -25px;
+  }
+  .text_header_log346765
+  {
+    color: white;
+    font-size: 3vh;
+    margin-left: 550px;
+    margin-top: 20px;
+  }
+  .butt_header_log-logoutButton
+  {
+    margin-left:75px;
+  }
+  .button_hed_log-logoutButtonrgy
+  {
+    background-color: white;
+    text-align: left;
+    margin-top: -25px;
+    padding: 7px;
+  }
+  .button_hed_log-logoutButtonrgy:hover
+  {
+    background-color: blue;
+    color: white;
+  }
+  .popup-close
+  {
+    background-color: white;
+    text-align: left;
+    margin-top: 5px;
+    padding: 7px;
+  }
+  .popup-close:hover
+  {
+    background-color: blue;
+    color: white;
+  }
+  .button_hed_log-profileButton {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .profile-icon {
+    margin-right: 5px;
+  }
+  
+  .text-profileButton {
+    font-size: 16px;
+  }
+  
+  .popup12355e {
+    position: absolute;
+    top: 85px;
+    right: 1%;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 200px;
+    z-index: 999;
+    border-radius: 10px;
+  }
+  
+  .popup12355e-close {
+    align-self: flex-end;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .button_hed_log-logoutButton {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .sign-logoutButton {
+    margin-right: 5px;
+  }
+  
+
+  .text-logoutButton {
+    font-size: 16px;
+  }
+  .imagdfs4563257{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: -100px;
+  }
+ 

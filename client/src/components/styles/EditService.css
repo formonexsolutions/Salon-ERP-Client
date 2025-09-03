@@ -1,0 +1,219 @@
+.edit-service-container-sk142sk {
+  width: 100vw;
+ 
+ 
+  
+  border: 1px solid #ccc;
+  
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+.labelchange567{
+  width: 175px;
+  text-align: right;
+  margin: 5px;
+}
+
+.flextochange90{
+  display: flex;
+  margin: 10px;
+}
+
+
+.edit-service-heading-sk142sk {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 21px;
+}
+
+
+.label-sk142sk {
+  font-size: 16px;
+}
+.input-sk142sk {
+  width: 35%;
+  padding: 5px;
+  font-size: 0.9rem;
+ 
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.buttons567{
+  display: flex;
+  background-color: #f0ecec;
+  justify-content: flex-end;
+  margin: 6px;
+  padding: 4px;
+}
+
+
+.save-button-sk142sk {
+  padding: 6px;
+  width: 70px;
+  margin: 2px;
+  
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: dodgerblue;
+  color: #fff;
+  
+  font-size: 0.9rem;
+  text-align: center;
+ 
+}
+.save-button-sk142sk:hover{
+  background-color: #0c64cf;
+}
+.delete-button-sk142sk{
+  padding: 7px ;
+  margin: 2px;
+  width: 70px;
+ 
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: #e94747;
+  color: #fff;
+  font-size: 0.9rem;
+  font-family: 'poppins';
+  font-weight: 300;
+}
+.delete-button-sk142sk:hover{
+  background-color: #cc0000;
+}
+.delete-buttonss{
+  padding: 5px ;
+  margin: 2px;
+  width: 60px;
+  
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: #ff5555;
+  color: #fff;
+  
+  font-size: 14px;
+  font-weight: 300;
+  font-family: 'poppins';
+}
+.delete-buttonss:hover{
+  background-color: #cc0000;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 431px) {
+  .edit-service-container-sk142sk {
+    width: 100vw;
+   
+   
+    
+    border: 1px solid #ccc;
+    
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  .labelchange567{
+    width: 99px;
+    text-align:left !important;
+    margin: 0px !important;
+    font-size: small;
+    font-weight: normal;
+    margin-left: 7px;
+  }
+  
+  .flextochange90{
+    display: flex;
+    
+  }
+  
+  
+  .edit-service-heading-sk142sk {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 21px;
+  }
+  
+  
+  .label-sk142sk {
+    font-weight: normal !important;
+  }
+  .input-sk142sk {
+    width: 65%;
+    padding: 3px;
+    height: 30px;
+    font-size: small;
+   
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .buttons567{
+    display: flex;
+    background-color: #f0ecec;
+    justify-content: flex-end;
+    margin: 6px;
+    padding: 4px;
+  }
+  
+  
+  .save-button-sk142sk {
+    padding: 6px;
+    width: 60px;
+    margin: 2px;
+    
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #17b852;
+    color: #fff;
+    
+    font-size: small;
+    text-align: center;
+   
+  }
+  .delete-buttonss {
+    padding: 6px;
+    margin: 2px;
+    width: 60px;
+    
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #ff5555;
+    color: #fff;
+   
+    font-size: 12px;
+    
+}
+  .save-button-sk142sk:hover{
+    background-color: #0c5f0a;
+  }
+  .delete-button-sk142sk{
+    padding: 5px ;
+    margin: 2px;
+    width: 60px;
+   
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #ff5555;
+    color: #fff;
+    font-size: small;
+  }
+  .delete-button-sk142sk:hover{
+    background-color: #cc0000;
+  }
+  
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+  
+  .edit-service-container-sk142sk {
+    max-width: 100%;
+    
+  }
+
+  .edit-service-heading-sk142sk {
+    font-size: 1.2rem;
+  }
+
+ 
+}

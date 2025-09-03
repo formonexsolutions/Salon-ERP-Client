@@ -1,0 +1,730 @@
+body {
+  background-color: #f0f4f8;
+  font-family: "Arial", sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+.mothercontainer923 {
+  height: 100vh;
+  background-image: url("../images/Subscription-bg.png");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.subscription-containeruvwy {
+  
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #6dd5ed, #2193b0);
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.subscription-heading {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.subscription-body {
+  flex-grow: 1;
+  padding: 20px;
+  background: #ffffff;
+
+  border-radius: 10px;
+  color: #333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: slideInUp 1s ease-in-out;
+}
+.logo54 {
+  width: 100px;
+}
+.dsa45 {
+  display: flex;
+}
+.subscription-info-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.subscription-info {
+  display: flex;
+  
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.info-label-subsricption {
+  font-size: 17px;
+  font-weight: bold;
+  color: #2193b0;
+}
+.info-label-subsricption1 {
+  font-size: 17px;
+  font-weight: bold;
+  color: #000000;
+}
+.info-input-subsricption {
+  width: 200px;
+  padding: 0px;
+  border: none;
+  border-radius: 4px;
+  font-size: 17px;
+  color: #333;
+  margin: 4px;
+}
+
+.subscription-plans {
+  margin-bottom: 20px;
+}
+
+.plan-heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2193b0;
+  margin-bottom: 10px;
+}
+
+.plan-options {
+  max-width: 40vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.plan-option {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 10px;
+  width: 170px;
+  height: 165px;
+  text-align: center;
+  border: 2px solid #2193b0;
+  border-radius: 10px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%);
+  color: #fff;
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-in-out;
+}
+.main231 {
+  display: flex;
+}
+.containerflex-23 {
+  display: flex;
+  justify-content: space-around;
+}
+.plan-option:hover {
+  background: linear-gradient(135deg, #6dd5ed 0%, #2193b0 100%);
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.plan-option.selected {
+  border-color: #140541;
+  background: linear-gradient(135deg, #6dd5ed 0%, #2193b0 100%);
+}
+
+.plan-option h3,
+.plan-option p {
+  margin: 0px 0;
+}
+
+.plan-price {
+  font-family: "poppins";
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+}
+.cont410 {
+  display: flex;
+  align-items: center;
+}
+.amount564 {
+  font-weight: 600;
+  margin-bottom: 0px;
+  width: 195px;
+  text-align: left;
+}
+.total-amount {
+  margin-top: 0px;
+}
+
+.amount-heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2193b0;
+  margin-bottom: 10px;
+}
+.proceed-btn {
+  width: 100%;
+  border: none;
+  padding: 7px;
+  font-size: 14px;
+  background-color: dodgerblue;
+  color: white;
+}
+.amount-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 20px;
+  border-radius: 7px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.terms-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.terms-checkbox input[type="checkbox"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin-right: 10px;
+}
+
+.terms-checkbox label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 15px;
+  color: #2193b0;
+}
+
+.terms-checkbox label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: #f0f4f8;
+  border: 2px solid #2193b0;
+  border-radius: 4px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.terms-checkbox input[type="checkbox"]:checked + label::before {
+  background-color: #2193b0;
+  border-color: #6dd5ed;
+}
+
+.terms-checkbox label::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 8px;
+  height: 14px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.terms-checkbox input[type="checkbox"]:checked + label::after {
+  opacity: 1;
+}
+
+.payment-button {
+  width: 100%;
+  padding: 8px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #2193b0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 20px;
+}
+
+.payment-button:hover {
+  background-color: #176789;
+}
+
+.footer-subscription {
+  text-align: center;
+  color: #fff;
+  padding: 10px 0;
+}
+.matcssxyz {
+  color: black;
+  margin-bottom: 0px;
+}
+.service-provider {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.provider-heading {
+  margin: 0px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #212529;
+  margin-right: 0px;
+}
+
+.provider-image {
+  width: 60px;
+  margin-right: 10px;
+}
+
+.matrical-link {
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+.terms-popup-overlay {
+  display: flex;
+  justify-content: center;
+}
+
+
+.gap5 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.gfr45 {
+  padding: 2%;
+}
+.p67 {
+  width: 130px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.mothflex8 {
+  display: flex;
+  gap: 20px;
+}
+.modal18 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(7px);
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.matrical-link:hover {
+  color: #55c9fa;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 767px) {
+  .subscription-info-container {
+    padding: 10px;
+    gap: 10px;
+  }
+  .subscription-heading {
+    font-size: 20px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-weight: bold;
+    color: #fff;
+  }
+  .mothflex8 {
+    display: flex;
+    gap: 20px;
+    font-size: small;
+}
+.total-amount {
+  margin-top: 1rem;
+  font-weight: 700;
+}
+  .mothercontainer923 {
+    height: auto;
+    background-image: url("../images/Subscription-bg.png");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+  }
+  .main231 {
+    display: flex;
+    flex-direction: column;
+  }
+  .subscription-info {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .info-label-subsricption,
+  .info-input-subsricption {
+    width: 100%;
+    text-align: center;
+  }
+
+  .service-provider {
+    flex-direction: column;
+    align-items: center;
+  }
+  .butt_re_renewal {
+    color: dodgerblue;
+    font-size: 15px;
+    cursor: pointer;
+    font-size: small;
+    text-align: left;
+    margin-top: 0px;
+}
+  .provider-heading,
+  .matrical-link {
+    text-align: center;
+  }
+
+  .provider-image {
+    margin-bottom: 10px;
+  }
+  .containerflex-23 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .subscription-body {
+    flex-grow: 1;
+    width: 95%;
+    padding: 7px;
+    background: #ffffff;
+    border-radius: 7px;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: slideInUp 1s ease-in-out;
+  }
+  .subscription-containeruvwy {
+    padding: 0px;
+    width: 100%;
+  }
+  .amount564 {
+    font-weight: 600;
+    margin-bottom: 0px;
+    width: 175px;
+
+    text-align: left;
+    margin-bottom: 0px !important;
+  }
+  .cont410 {
+    display: flex;
+    align-items: center;
+    font-size: small;
+  }
+  .amount-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    border: 1px solid #ccc;
+    background: #fff;
+    padding: 12px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+  }
+  .amount-heading {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2193b0;
+    margin-bottom: 9px;
+  }
+  .total-amount {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0px;
+  }
+  .terms-checkbox label {
+    position: relative;
+    padding-left: 20px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    font-size: 13px;
+    color: #2193b0;
+  }
+  .terms-checkbox label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    background-color: #f0f4f8;
+    border: 2px solid #2193b0;
+    border-radius: 3px;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  .payment-button {
+    width: 40%;
+    padding: 6px;
+    font-size: 13px;
+    color: #fff;
+    background-color: #2193b0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 7px;
+  }
+  .plan-price {
+    font-family: "poppins";
+    font-size: 15px;
+    font-weight: normal;
+    color: #ffffff;
+    margin-bottom: 0px !important;
+  }
+  .plan-option {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0px;
+    width: 130px;
+    height: 120px;
+    text-align: center;
+    border: 2px solid #2193b0;
+    border-radius: 6px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%);
+    color: #fff;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  .matcssxyz {
+    color: black;
+    font-size: x-small;
+    margin-bottom: 0px !important;
+  }
+  .matrical-link {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+  }
+  .service-provider {
+    background-color: burlywood;
+    flex-direction: column;
+    align-items: center;
+    padding: 7px;
+  }
+
+
+  
+  .subscription-info-container {
+    padding: 5px;
+    gap: 5px;
+  }
+
+  .subscription-info {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .info-label-subsricption,
+  .info-input-subsricption {
+    width: 100%;
+    text-align: left;
+    padding: 0px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    margin: 3px;
+  }
+  .terms-content {
+    font-size: small;
+    text-align: left;
+    max-height: 400px;
+    overflow-y: auto;
+    margin: 5px 0;
+    line-height: 1.6;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .mothercontainer923 {
+    height: auto;
+    background-image: url("../images/Subscription-bg.png");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .terms-content {
+    font-size: small;
+    text-align: left;
+    max-height: 400px;
+    overflow-y: auto;
+    margin: 5px 0;
+    line-height: 1.6;
+  }
+  .close-button {
+    padding: 6px 10px;
+  }
+  .matrical-link {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 17px;
+  }
+  .info-input-subsricption {
+    width: 145px;
+    padding: 0px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    margin: 4px;
+  }
+  .subscription-heading {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #fff;
+  }
+  .info-label-subsricption1 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+  }
+  .info-label-subsricption {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2193b0;
+  }
+  .subscription-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 5px;
+  }
+  .subscription-body {
+    padding: 10px;
+    width: 98%;
+  }
+  .subscription-containeruvwy {
+    padding: 10px;
+  }
+  .plan-heading,
+  .amount-heading {
+    font-size: 20px;
+  }
+  .plan-price {
+    font-family: "poppins";
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  .plan-option {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 10px;
+    width: 135px;
+    height: 120px;
+    border-radius: 7px;
+  }
+  .amount-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    border: 1px solid #ccc;
+    background: #fff;
+    padding: 10px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .amount564 {
+    font-size: 14px;
+    font-weight: 600;
+    width: 185px;
+    text-align: left;
+  }
+  .payment-button {
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #2193b0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 0px;
+  }
+}

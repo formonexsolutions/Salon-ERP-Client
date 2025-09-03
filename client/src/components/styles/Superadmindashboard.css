@@ -1,0 +1,343 @@
+.header_part_log {
+  background-color: blue !important;
+  display: flex;
+  align-items: center;
+
+}
+.supermother12 {
+  max-height: 100vh;
+}
+.text_header_log {
+  font-size: 4vh;
+  font-weight: 700;
+  padding-left: 90vh;
+}
+
+.butt_header_log-logoutButton {
+  position: relative;
+  left: 37% !important;
+}
+
+.button_hed_log-logoutButton {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: rgb(114, 128, 249);
+}
+.overflow874{
+  max-height: 70vh;
+    overflow: auto;
+}
+.thead310{
+  position: sticky;
+  top: 0px;
+}
+.sign-logoutButton {
+  width: 90%;
+  transition-duration: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign-logoutButton svg {
+  width: 17px;
+}
+
+.sign-logoutButton svg path {
+  fill: white;
+}
+
+.text-logoutButton {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition-duration: 0.3s;
+}
+
+.button_hed_log-logoutButton:hover {
+  width: 125px;
+  border-radius: 40px;
+  transition-duration: 0.3s;
+}
+
+.button_hed_log-logoutButton:hover .sign-logoutButton {
+  width: 30%;
+  transition-duration: 0.3s;
+  padding-left: 20px;
+}
+
+.button_hed_log-logoutButton:hover .text-logoutButton {
+  opacity: 1;
+  width: 70%;
+  transition-duration: 0.3s;
+  padding-right: 10px;
+}
+
+.button_hed_log-logoutButton:active {
+  transform: translate(2px, 2px);
+}
+.inp_supdash_sre {
+  padding-left: 45vh;
+}
+.inp_sehjh {
+  width: 425px;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 6px;
+}
+.inp_sehjh::placeholder {
+  font-size: small;
+}
+.tab_superadmin {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+  gap: 15px;
+}
+.supermother904 {
+  display: flex;
+  height: 88vh;
+}
+
+.tab_superadmin table {
+  width: 100% !important;
+  background-color: white;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-family: Arial, sans-serif;
+}
+
+.tab_superadmin th {
+  border: 1px solid #fff;
+  padding: 10px;
+  text-wrap: nowrap;
+  text-align: center;
+  background-color: rgb(8, 49, 119);
+  border-bottom: 1px solid #ddd;
+  font-size: 1rem;
+  color: white;
+}
+
+.tab_superadmin td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.tab_superadmin tbody tr:hover {
+  background-color: #ddd;
+}
+.selectboc54lk123 {
+  padding: 4px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+}
+.select564 {
+  padding: 5px 8px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+}
+
+
+select::-ms-expand {
+  display: none; 
+}
+
+select::-webkit-inner-spin-button,
+select::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; 
+}
+
+
+option {
+  padding: 8px 12px;
+}
+
+option:hover {
+  background-color: #f0f0f0;
+}
+.flex16et4663_sa {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1vh;
+}
+.badtuytuges {
+  background-color: white;
+  padding: 2px 12px;
+  margin-right: 0px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.butt_act_dea.activate {
+  background-color: #007bff;
+  color: white;
+  padding: 2px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+  /* height: 4vh; */
+  width: 14vh;
+}
+
+.butt_act_dea.deactivate {
+  background-color: rgb(205, 16, 16);
+  color: white;
+  padding: 2px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 5px;
+
+  width: 14vh;
+}
+.but_sa_p {
+  position: absolute;
+  left: 121vh;
+  padding-top: 2vh;
+}
+.but_sa_inp_sear {
+  height: 5vh;
+  width: 14vh;
+  background-color: #007bff;
+  color: white;
+}
+.ee_Ee_ss_ss_cus {
+  cursor: pointer;
+  color: #007bff;
+}
+
+.spa_in_sa_sear,
+.display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.display654 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+@media screen and (max-width: 767px) {
+  .tab_superadmin {
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    overflow: scroll;
+  }
+  .badtuytuges {
+    background-color: white;
+    padding: 0px 7px;
+    margin-right: 0px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 12px;
+}
+.flex16et4663_sa {
+  display: flex;
+  justify-content: flex-end;
+  gap: 3px;
+}
+  .overflow874{
+    width: 100%;
+        overflow: auto;
+  }
+  .tab_superadmin table {
+    width: 60%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-family: Arial, sans-serif;
+    overflow: scroll;
+  }
+  .inp_supdash_sre {
+    padding-left: 0vh;
+  }
+  .spa_in_sa_sear,
+  .display {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  .inp_sehjh {
+    width: 95vw;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 7px;
+    font-size: small;
+  }
+  .inp_sehjh::placeholder {
+    font-size: x-small;
+  }
+  .tab_superadmin th {
+    padding: 7px;
+    text-wrap: nowrap;
+    text-align: center;
+    background-color: rgb(8, 49, 119);
+    border-bottom: 1px solid #ddd;
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: white;
+}
+.tab_superadmin td {
+  padding: 3px;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;
+  font-size: small;
+}
+.select564 {
+  font-size: small;
+}
+.butt_act_dea.deactivate {
+  font-size: x-small;
+  width: 13vh;
+}
+.edit-button-supersubscription{
+  font-size: x-small;
+}
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+  
+}

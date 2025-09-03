@@ -1,0 +1,240 @@
+.center025 {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #ccc;
+}
+.logo-salon-cd {
+  height: 50px;
+  color: #333 !important;
+  width: 40;
+}
+.custdetailslabel {
+  text-align: start;
+  width: 150px;
+  font-size: 15px;
+}
+.padding908 {
+  padding: 10px;
+}
+.cd-input {
+  width: 250px;
+  margin-top: -4px;
+  height: 34px;
+  background-color: transparent;
+  border: none !important;
+  padding-left: 10px;
+}
+.A7divlabip {
+  font-weight: bold;
+  margin-left: 10%;
+  display: flex;
+}
+.sdiv1img {
+  height: 150px;
+  border-radius: 100%;
+  width: 235px;
+  margin-top: -10px;
+}
+.sdiv2 {
+  width: 100%;
+  border: 2px solid #ffffff;
+  padding: 10px;
+  padding-top: 0%;
+  border-bottom: none;
+  border-top: none;
+  border-right: none;
+  height: auto;
+  margin-top: 1%;
+}
+.mdiv {
+  /* width: 100%; */
+
+  margin: 5px;
+
+  display: flex;
+  flex-direction: column;
+}
+.mmm {
+  border: 1px solid #ccc;
+  box-shadow: 6px 5px 6px #ccc;
+  width: 90%;
+  margin-left: 5%;
+  background-color: white;
+}
+.A7editbtn-cust-det {
+  padding: 7px;
+  font-family: "poppins";
+  background-color: dodgerblue;
+  border: none;
+  color: white;
+  /* height: 30px; */
+  border-radius: 3px;
+  /* height: 32px; */
+  font-size: 2vh;
+  width: 100px;
+  margin: 5px;
+  /* height: 5vh; */
+
+  cursor: pointer;
+  font-weight: 300;
+  position: relative;
+  /* bottom: 150px; */
+}
+.A7editbtn-cust-det:hover {
+  background-color: #58a2f1;
+}
+
+.bill-details-btn {
+  background-color: rgb(29, 234, 207);
+  border: none;
+  color: white;
+  height: 30px;
+  border-radius: 3px;
+  height: 29px;
+  font-size: 14px;
+  width: 100px;
+  margin: 10px;
+
+  cursor: pointer;
+  font-weight: 300;
+}
+
+.A7custheader {
+  margin-top: 30px;
+  background-color: rgb(200, 196, 196);
+  border-radius: 3px 3px 0px 0px;
+  text-align: start;
+  height: 35px;
+}
+.customer-th {
+  border: 1px solid #ccc;
+}
+.bill-details-btn {
+  color: white;
+  background-color: dodgerblue;
+  padding: 2px;
+  font-size: 13px;
+  font-weight: 300;
+  cursor: pointer;
+  margin: 2px;
+
+  width: 50px !important;
+}
+.bill-details-btn:hover {
+  background-color: rgb(104, 163, 221);
+  color: black;
+  transition: 0.5s;
+}
+
+.pagination46 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pagination46 {
+  cursor: pointer;
+  color: #333;
+}
+
+.pagination46 .active {
+  background-color: #007bff;
+  color: #fff;
+  width: 30px;
+  text-align: center;
+  padding: 4px;
+  background-size: cover;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 431px) {
+  .logo-salon-cd {
+    height: 50px;
+    color: #333 !important;
+    width: 40px;
+  }
+}
+@media only screen and (max-width: 768px) and (max-width: 1023px) {
+  .mmm {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .mdiv {
+    width: 98.5%;
+    display: flex;
+
+    /* margin-bottom: 2px; */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sdiv1 {
+    width: 50%;
+
+    display: flex;
+  }
+
+  .sdiv1img {
+    height: 120px;
+    border-radius: 100%;
+    width: 150px;
+  }
+
+  .sdiv2 {
+    width: 100%;
+    margin-top: 0px;
+    border: none;
+    padding: 10px;
+    padding-top: 0%;
+    border-bottom: none;
+    border-top: none;
+    border-right: none;
+    height: auto;
+  }
+  .center025 {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #ccc;
+}
+  .A7divlabip {
+    margin-left: 0;
+  }
+
+  .cd-input {
+    width: 100%;
+  }
+
+  .A7editbtn-cust-det {
+    padding: 7px;
+    background-color: dodgerblue;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    /* height: 25px; */
+    font-size: 12px;
+    width: 85px;
+    /* margin-bottom: 15px; */
+    cursor: pointer;
+  }
+
+  .custdetailslabel {
+    text-align: start;
+    width: 225px;
+    font-size: smaller;
+  }
+
+  .cd-input {
+    font-size: smaller;
+  }
+
+  .flexchange4455 {
+    display: flex;
+        /* font-size: smaller; */
+        padding: 5px;
+        margin-top: 0px;
+  }
+
+  .popup-details {
+    width: 26vw;
+  }
+}

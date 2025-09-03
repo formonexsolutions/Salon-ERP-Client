@@ -1,0 +1,447 @@
+
+.error {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.s-super-subscription-container h2 {
+  text-align: center;
+  font-size: 1.5em;
+  color: #343a40;
+  margin-bottom: 20px;
+}
+
+.s-form-group-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.s-form-group {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1 1 calc(33.33% - 15px); 
+  margin-bottom: 15px;
+}
+
+.s-form-group label {
+  display: block;
+  font-weight: normal;
+  font-size: small;
+  margin-bottom: 5px;
+  color: #495057;
+}
+
+.s-form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #2867a5;
+  border-radius: 4px;
+  font-size: 1em;
+  color: #000000;
+  box-sizing: border-box;
+}
+
+.s-form-group input:read-only {
+  background-color: #e9ecef;
+}
+
+.supersubscription-button-submit {
+  padding: 8px 17px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 500;
+  width: 100%;
+  color: #090000;
+  text-shadow: none;
+  background: transparent;
+  cursor: pointer;
+  box-shadow: transparent;
+  border: 1px solid #000000;
+  transition: 0.5s ease;
+  user-select: none;
+}
+
+.supersubscription-button-submit:hover,
+.supersubscription-button-submit:focus {
+  color: #ffffff;
+  background: #008cff;
+  border: 1px solid #008cff;
+}
+
+
+.table-scrollasdfg {
+  max-height: 400px; 
+  overflow: auto;
+}
+.table-container {
+  position: absolute;
+    top: 21vh;
+    left: 32vh;
+    width: 83%;
+    /* max-width: 1051px; */
+    margin: 0 auto;
+    padding: 0px;
+    /* background-color: #f8f9fa; */
+    /* border: 1px solid #dee2e6; */
+    border-radius: 8px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.635); */
+
+
+
+}
+
+.table-container h2 {
+  text-align: center;
+  font-size: 1.5em;
+  color: #343a40;
+  margin-bottom: 20px;
+}
+.SuperSubscriptionTable {
+  width: 100% !important;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+.SuperSubscriptionTable thead {
+  background-color: #5996d2;
+  color: #000000;
+}
+
+.SuperSubscriptionTable th {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #dee2e6;
+  font-weight: bold;
+  color: white;
+  background-color: rgb(8, 49, 119);
+}
+.SuperSubscriptionTable td {
+  padding: 7px;
+  text-align: center;
+  border: 1px solid #dee2e6;
+}
+.sub654 {
+  max-height:77vh;
+  overflow: auto;
+}
+
+.SuperSubscriptionTable tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.supersubscription-button-Addplans {
+  position: absolute;
+  top: 13vh;
+  right: 2vw;
+  padding: 8px 15px;
+  height: 40px;
+  width: 150px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.popupaddplans {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.popup-contentaddplans {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+}
+.closeaddplans {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+.butt_act_dea.inactive-button {
+  background-color: rgb(205, 16, 16);
+  color: white;
+    padding: px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right:px;
+    height: 4vh;
+    width: 10vh;
+} 
+
+.edit-button-supersubscription:hover {
+  background-color: #0056b3;
+}
+@keyframes ani {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+.btn205 {
+  display: flex;
+  justify-content: center;
+}
+
+.edit-button-supersubscription {
+  background-color: #007bff;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 0px;
+  width: 10vh;
+}
+
+.edit-modal-supersubscription {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  max-width: 1000px;
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 18px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.82);
+  z-index: 1000;
+  padding: 15px;
+}
+
+.modal-content-supersubscription {
+  padding: 20px;
+}
+
+.modal-content-supersubscription h2 {
+  text-align: center;
+  font-size: 1.5em;
+  color: #343a40;
+  margin-bottom: 20px;
+}
+
+.modal-content-supersubscription form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.supersubscription-button-submit {
+  display: inline-block;
+  padding: 8px 15px;
+  width: 150px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: smaller;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 18px;
+}
+
+@media screen and (max-width: 767px) {
+  .supersubscription-button-Addplans {
+    position: absolute;
+    top: 17vh;
+    right: 2vw;
+    padding: 8px 15px;
+    height: 40px;
+    width: 150px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .edit-modal-supersubscription {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 96%;
+    max-width: 1000px;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 18px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.82);
+    z-index: 1000;
+    padding: 0px;
+}
+.modal-content-supersubscription {
+  padding: 14px;
+}
+.sub654 {
+  max-height: 60vh;
+  overflow: auto;
+}
+  .table-container {
+    position: absolute;
+    top: 30vh;
+    left: 0vh;
+    width: 100%;
+    margin: 0 auto;
+    padding: 5px;
+
+    border-radius: 6px;
+  }
+  .supersubscription-button-submit {
+    margin-left: 0px;
+  }
+  .supersubscription-button-Addplans {
+    position: absolute;
+    top: 23vh;
+    right: 2vw;
+    padding: 1px 10px;
+    height: 33px;
+    width: 100px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: normal;
+  }
+  .supersubscription-button-submit {
+    padding: 5px 15px;
+    width: 80px;
+    border-radius: 3px;
+    font-size: small;
+    font-weight: normal;
+    transition: background-color 0.3s;
+    margin-top: 18px;
+  }
+  .SuperSubscriptionTable th {
+    padding: 5px;
+    text-align: left;
+    border: 1px solid #dee2e6;
+    font-weight: normal;
+    white-space: nowrap;
+    font-size: smaller;
+    color: white;
+    background-color: rgb(8, 49, 119);
+  }
+  .SuperSubscriptionTable td {
+    padding: 5px;
+    font-size: small;
+    white-space: nowrap;
+    text-align: center;
+    border: 1px solid #dee2e6;
+  }
+  .s-form-group input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #2867a5;
+    border-radius: 4px;
+    font-size: small;
+    color: #000000;
+    box-sizing: border-box;
+  }
+  .s-form-group {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: calc(33.33% - 15px);
+    margin-bottom: 4px;
+  }
+  .popup-contentaddplans {
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    width: 95%;
+    position: relative;
+  }
+  .closeaddplans {
+    position: revert;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  .Toastify__toast {
+    margin-bottom: 0;
+    border-radius: 0;
+    margin-top: 2%;
+    font-size: small;
+  }
+  .confirm-btn {
+    margin: 0 5px;
+    padding: 2px 11px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: small;
+    transition: background-color 0.3s ease;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .supersubscription-button-Addplans {
+    position: absolute;
+    top: 25vh;
+    right: 2vw;
+    padding: 0px;
+    height: 34px;
+    width: 110px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: small;
+    font-weight: normal;
+  }
+  .sub654 {
+    max-height: 63vh;
+    overflow: auto;
+}
+  .table-container {
+    position: absolute;
+    top: 34vh;
+    left: 0vh;
+    width: 96%;
+    margin: 0 auto;
+    padding: 14px;
+    margin-left: 2%;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.635);
+  }
+  .edit-button-supersubscription {
+    padding: 3px;
+    font-size: 12px;
+    margin-right: 0px;
+    width: 10vh;
+  }
+}

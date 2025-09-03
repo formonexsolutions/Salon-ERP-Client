@@ -1,0 +1,321 @@
+.heading2344 {
+  padding: 10px;
+  background-color: transparent;
+  box-shadow: 0px 0px 0px 1px bisque;
+  color: rgb(255, 255, 255);
+  font-size: 1.6rem;
+  margin-top: 0px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+  /* border: 1px solid #ccc; */
+}
+.pd-container122 {
+  margin-left: 2%;
+  width: 96%;
+  border: 1px solid #ccc;
+  background-color: transparent;
+  box-shadow: 6px 5px 6px #ccc;
+  font-family: "Poppins";
+}
+.pd-td1233 {
+  color: white;
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 3px;
+  font-size: 0.9rem;
+}
+.pd-table122 {
+  background: #151414;
+  width: 100% !important;
+  border: collapse;
+  margin: 10px auto;
+}
+.pd-container1222 {
+  color: white;
+  margin-left: 4%;
+  width: 92%;
+  backdrop-filter: brightness(0.5) blur(18px);
+  border: 1px solid white;
+  padding: 1rem;
+  border-radius: 13px;
+  overflow: hidden;
+  background-color: transparent;
+  /* box-shadow: 6px 5px 6px #ccc; */
+  font-family: "Poppins";
+}
+.book-text1 {
+  width: 5vw;
+  padding: 5px;
+  font-size: 0.9rem;
+  background-color: #0056b3;
+  border: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  margin: 2px;
+  color: white;
+}
+.book-text1:hover {
+  background-color: rgb(112, 178, 243);
+  color: black;
+  transition: 0.5s;
+}
+.pd-th122 {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+  /* font-weight: bold; */
+  color: #fff;
+  font-size: 17px;
+  background-color: #0056b3;
+}
+.input11 {
+  background: transparent;
+  width: 80px;
+  color: white;
+  text-align: center;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-left: 7px;
+  margin-right: 3px;
+  padding: 4px;
+}
+.input11 option {
+  color: black;
+  padding: 8px 12px;
+}
+.border-change8900 {
+  width: 20vw;
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 7px;
+  font-size: 0.9rem;
+}
+.badges0 {
+  background-color: transparent;
+  border: 1px solid #ddd;
+  color: #ffffff;
+  height: 25px;
+  font-size: small;
+  margin: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+  font-family: "Poppins";
+  padding: 2px 10px;
+}
+.active0 {
+  background-color: white;
+  color: black;
+  width: 60px !important;
+  text-align: center;
+  border: 1px solid #0b0c0d;
+}
+.flex352 {
+  display: flex;
+  gap: 1rem;
+}
+.space2099 {
+  margin-top: 2rem;
+}
+.pdadd-btn122 {
+  background-color: #0056b3;
+  color: #fff;
+  border: 1px solid;
+  font-size: 0.9rem;
+  font-family: "poppins";
+  font-weight: 300;
+  padding: 7px;
+  border-radius: 4px;
+}
+.pdadd-btn122:hover {
+  background-color: #04376e;
+  transform: scale(1.1);
+}
+
+/* AddDealersProductCss */
+
+/* Popup overlay with a fade-in animation */
+.popup-overlay54 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(137 129 129 / 65%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn54 0.3s ease-in-out;
+}
+
+/* Popup content with a slide-in animation */
+.popup-content54 {
+    backdrop-filter: brightness(0.5) blur(32px);
+    background-color: transparent;
+    padding: 2rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 35%;
+    max-width: 450px;
+    position: relative;
+    animation: slideIn54 0.4s ease-out;
+}
+
+/* Close button */
+.close-popup-btn54 {
+    position: absolute;
+    /* top: 10px; */
+    right: 33px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #ffffff;
+    transition: color 0.2s ease-in-out;
+}
+
+.close-popup-btn54:hover {
+  color: #f26969;
+}
+
+/* Fade-in animation for the overlay */
+@keyframes fadeIn54 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide-in animation for the content */
+@keyframes slideIn54 {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Form styles */
+.main-empp54 {
+  
+}
+
+.addproduct1254 {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading23454 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.product-formgroup1254 {
+  margin-bottom: 8px;
+}
+
+.plabel1254 {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: white;
+}
+
+.pinput1254 {
+    color: white;
+    width: 100%;
+    padding: 7px;
+    border: 1px solid #fff;
+    background: transparent;
+    border-radius: 5px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.pinput1254:focus {
+  border-color: #007bff;
+}
+.dateinput1254 {
+    color: white;
+    width: 100%;
+    padding: 7px;
+    border: 1px solid #fff;
+    background: transparent;
+    border-radius: 5px;
+    transition: border-color 0.3s ease-in-out;
+}
+.dateinput1254::placeholder {
+    color: #ccc; 
+  }
+
+  .dateinput1254::placeholder {
+    color: #ccc; 
+  }
+  
+  .dateinput1254::-webkit-calendar-picker-indicator {
+    filter: invert(100%); 
+  }
+  
+  .dateinput1254:focus {
+    border-color: #fff; 
+    outline: none; 
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.3); 
+  }
+  
+.product-buttons1254 {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.popup-content25 {
+  background: #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  width: 85%;
+  max-width: 100%;
+  height: 99vh;
+  overflow: auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.twocont004{
+  display: flex;
+  flex-direction: column;
+ 
+}
+.ghft78{
+  max-height: 71vh;
+  
+  background-color: white;
+  padding: 10px;
+  margin-top: 0.7rem;
+  border-radius: 8px;
+
+}
+.checkbox90{
+  outline: none;
+  cursor: pointer;
+}
+.pbtn1254 {
+    width: 6vw;
+    padding: 9px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.pbtn1254:hover {
+  background-color: #0056b3;
+}
+@media (max-width: 767px) {
+  
+}

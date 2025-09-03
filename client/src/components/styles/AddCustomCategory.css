@@ -1,0 +1,125 @@
+/* CSS for AddCustomCategory component */
+
+/* Container for the form */
+.main-empp84 {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  .plabel284 {
+    width: 16vw;
+    font-size: 1.1rem;
+    margin-bottom: 0px;
+    display: block;
+    color: #555;
+}
+  /* Form styling */
+  .addproduct1284 {
+    display: flex;
+    /* gap: 2rem; */
+    flex-direction: column;
+  }
+  .addproduct284 {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+}
+  .btn-group52{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+  .width3{
+    width: 80px;
+    padding: 6px ;
+    border-radius: 4px;
+  }
+  /* Form heading */
+  .heading23484 {
+    text-align: center;
+    font-size: 1.9rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  /* Form group for input */
+  .product-formgroup1284 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  /* Label styling */
+  .plabel1284 {
+    width: 18vw;
+    font-size: 1rem;
+    margin-bottom: 0px;
+    display: block;
+    color: #555;
+  }
+  
+  /* Input styling */
+  .pinput1284 {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  /* Buttons container */
+  .product-buttons1284 {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  /* Button styling */
+  .pbtn12a84 {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .pbtn12a84:hover {
+    opacity: 0.8;
+  }
+  
+  /* Add button specific styling */
+  .pbtn12a84[type="submit"] {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .pbtn12a84[type="submit"]:hover {
+    background-color: #218838;
+  }
+  
+  /* Cancel button specific styling */
+  .pbtn12a84[type="button"] {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .pbtn12a84[type="button"]:hover {
+    background-color: #c82333;
+  }
+  @media (max-width:768px){
+    .pbtn12a84 {
+      padding: 7px 15px;
+      font-size: small;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+  }
+  }

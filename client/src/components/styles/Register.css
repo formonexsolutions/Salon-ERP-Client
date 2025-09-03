@@ -1,0 +1,552 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.register-page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  /* background-color: #000080; */
+  background-image: url("../images/loginbg.jpg");
+  background-size: cover;
+  position: relative;
+}
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  /* width: 84%;
+  background: #fff; */
+  border-radius: 0px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-top: 20px;
+}
+.form398 {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  background-color: white;
+}
+.backButton,
+.backArrow {
+  background-color: transparent;
+  color: #0d6efd;
+  text-align: center;
+  padding-top: 3%;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 0px;
+}
+
+.backArrow {
+  background-color: transparent;
+  font-size: 24px;
+}
+
+.register-info {
+  width: 35%;
+  background: #2e3b4e;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-info h2 {
+  margin-bottom: 20px;
+}
+
+.register-info .register-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.register-form {
+  /* box-shadow: 0px 4px 6px #ccc;
+  border: 1px solid #ccc; */
+  border-radius: 4px;
+  flex: 1 1;
+  padding: 0px;
+}
+.para6632 {
+  text-align: center;
+  font-size: 20px;
+  color: #ffc107;
+  margin: 24px;
+  margin-top: 0px;
+}
+.formHeading {
+  margin-bottom: 6%;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.formSubheading {
+  margin-bottom: 20px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.formGroup {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.formGroup:last-child {
+  margin-right: 0;
+}
+
+.formGroup label {
+  margin-bottom: 0px;
+  font-weight: 500;
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 4px;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.formGroup input::placeholder {
+  font-size: 13px;
+  color: #c5c2c2;
+}
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+/* .form-input32{
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+} */
+.formGroup32  {
+ 
+  line-height: 1.2;
+}
+.registerButton {
+  width: 100%;
+  padding: 7px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 3%;
+}
+
+.registerButton:hover {
+  background: #025dbe;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.suggestions {
+  list-style: none;
+  padding: 0;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  z-index: 10;
+  position: absolute;
+  max-height: 150px; 
+  overflow-y: auto;  
+}
+
+.suggestions li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestions li:hover {
+  background: #f0f0f0;
+}
+.password-input {
+  position: relative;
+}
+
+.password-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  cursor: pointer;
+}
+
+.buttonotp{
+  width: 100px;
+  background-color: #70f170;
+
+}
+.buttonotp2{
+  width: 100px;
+  background-color: rgb(83, 136, 235);
+}
+.buttonotpfexl{
+  display: flex;
+  padding-top: 5px;
+}
+.otp-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.otp-modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.otp-label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.otp-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.otp-input {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.otp-input:focus {
+  border-color: #007bff;
+}
+
+.verify-otp-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.verify-otp-button:hover {
+  background-color: #0056b3;
+}
+
+.click_butt_renrewal{
+  margin-top: 4%;
+} 
+.submitButtonWrapper_xys12_butt
+{
+  display: flex;
+  gap: 5vh;
+}
+.butt_re_renewal{
+  color: dodgerblue;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+  margin-top: 0px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content1 {
+  background: white;
+  padding: 20px; 
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: absolute; 
+}
+.close-modal {
+  position: absolute;
+  top: 10px; 
+  right: 10px; 
+  background-color: transparent;
+  color: #333; 
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+}
+
+.close-modal:hover {
+  color: red; 
+}
+
+
+@media (max-width: 767px) {
+  .register-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background: #2e3b4e;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 0px;
+  }
+  .para6632 {
+    text-align: center;
+    font-size: 13px;
+    color: #ffc107;
+    margin: 10px;
+    margin-top: 0px;
+  }
+  .register-info {
+    width: 100%;
+    background: #2e3b4e;
+    color: #fff;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .form398 {
+    background-color: #2e3b4e;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+  }
+  .formHeading {
+    margin-bottom: 6%;
+    font-size: 21px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .formGroup label {
+    font-size: 1rem;
+    margin-bottom: 0px;
+    font-weight: 500;
+  }
+  .formGroup {
+    flex: 1 1;
+    display: flex;
+    gap: 0px;
+    flex-direction: column;
+    margin-right: 0px;
+  }
+  .form-row {
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .formGroup input {
+    width: 100%;
+    padding: 2px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .formGroup input::placeholder{
+    font-size: 12px;
+  }
+  .registerButton {
+    width: 100%;
+    padding: 5px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-top: 0px;
+  }
+  .backButton,
+  .backArrow {
+    background-color: transparent;
+        color: #fff;
+        text-align: center;
+        padding-top: 10%;
+        font-size: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 0px;
+  }
+  .register-form {
+    /* box-shadow: 0px 4px 6px #ccc; */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    flex: 1 1;
+    background-color: white;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .register-container {
+    display: flex;
+
+    width: 98%;
+    /* background: #fff; */
+    border-radius: 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  .click_butt_renrewal {
+    margin-top: 4%;
+}
+  .para6632 {
+    text-align: center;
+    font-size: 15px;
+  }
+  .register-info {
+    width: 50%;
+    max-width: 450px;
+    background: #2e3b4e;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .form398 {
+    width: 50%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .formHeading {
+    margin-bottom: 10%;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    font-family: "poppins";
+  }
+  .formGroup label {
+    font-size: 0.9rem;
+    margin-bottom: 0px;
+    font-weight: 500;
+  }
+  .register-form {
+    /* box-shadow: 0px 4px 6px #ccc;
+    border: 1px solid #ccc; */
+    border-radius: 0px;
+    /* flex: 1 1; */
+    padding: 0px;
+  }
+  .formGroup {
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 0px;
+  }
+  .butt_re_renewal {
+    color: dodgerblue;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: left;
+    margin-top: 0px;
+}
+  .form-row {
+    display: flex;
+    gap: 9px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .registerButton {
+    width: 100%;
+    padding: 5px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 6%;
+  }
+  .formGroup input {
+    width: 100%;
+    padding: 3px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1441px){
+  /* .register-info {
+    width: 47%;
+    max-width: 500px;
+    background: #2e3b4e;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .form398 {
+    width: 47%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+  } */
+}

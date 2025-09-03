@@ -1,0 +1,162 @@
+/* Container for the Dealers Request and Import Dealers button */
+.dealers-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Styling for the Dealers Request section */
+.dealers-request {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Styling for the Import Dealers button */
+.import-dealers-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  
+}
+
+.import-dealers-button:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for the table to ensure it aligns below the header */
+.dealers-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.dealers-table th, .dealers-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.import-button-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.import-button {
+  background-color: dodgerblue;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.import-button:hover {
+  background-color: #1e90ff;
+}
+
+.import-button:active {
+  background-color: #187bcd;
+}
+/* Container for the Dealers Request, Import Dealers button, and search bar */
+.dealers-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+/* Styling for the Dealers Request section */
+.dealers-request {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-right: 20px; /* Space between the "Dealers Request" and the button */
+}
+
+/* Styling for the Import Dealers button */
+.import-dealers-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-left: 40px; /* Space between the button and the search bar */
+}
+
+.import-dealers-button:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for the search bar */
+.inp_supdash_sre {
+  flex: 1; /* Allows the search bar to take up remaining space */
+}
+
+.inp_sehjh {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%; /* Adjust width as needed */
+}
+@media screen and (max-width: 767px) {
+  .dealers-header
+  {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .import-dealers-button
+  {
+    margin-left: 5px;
+    padding: 8px 12px; 
+    font-size: 14px;  
+    border-radius: 4px; 
+  } 
+  .inp_sehjh {
+    width: 98vw;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    /* width: 100%; */
+}
+.dealers-request {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-right: 20px;
+  margin-top: 3%;
+}
+}
+@media (min-width: 768px) and (max-width: 1023px){
+  .dealers-header{
+    gap: 15px;
+  }
+  .import-dealers-button
+  {
+    margin-left: -5px;
+  }
+  .inp_sehjh {
+    padding: 4px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 61%;
+}
+}

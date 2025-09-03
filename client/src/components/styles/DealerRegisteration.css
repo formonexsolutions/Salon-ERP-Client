@@ -1,0 +1,260 @@
+.dealerLoginButton {
+  display: block;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+} */
+
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.loginButton {
+  display: block;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.toggleFormButton32 {
+  width: 10vw;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  color: white;
+  background-color: #007bff;
+}
+.register-container32 {
+  display: flex;
+  justify-content: center;
+  border-radius: 0px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  overflow: hidden;
+  margin-top: 20px;
+  height: 65vh;
+  width: 90vw;
+}
+.registerButton32 {
+  width: 100%;
+  padding: 8px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 6%;
+}
+.input-field32 {
+  margin-bottom: 1rem;
+  padding: 10px;
+  border: 1px solid var(--input-border-color);
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+.login-form32 {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.form3988 {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: white;
+}
+.formHeading32 {
+  margin-bottom: 15%;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+}
+.password-container {
+  position: relative;
+}
+
+.password-input32 {
+  padding-right: 30px; /* Space for the eye icon */
+}
+
+.password-toggle-icon32 {
+  position: absolute;
+  top: 38%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .register-container32 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 0px;
+    box-shadow: none;
+    overflow: hidden;
+    margin-top: 0px;
+    height: 100vh;
+    width: 95vw;
+  }
+  .formHeading32 {
+    margin-bottom: 15%;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+}
+.input-field32 {
+  margin-bottom: 1rem;
+  padding: 7px;
+  border: 1px solid var(--input-border-color);
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+  .register-info52 {
+    width: 100%;
+    background: #2e3b4e;
+    color: #fff;
+    padding: 6px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  .form3988 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: white;
+  }
+  .formGroup label {
+    font-size: small;
+    margin-bottom: 0px;
+    font-weight: 500;
+}
+  .toggleFormButton32 {
+    font-size: small;
+    width: 30vw;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    color: white;
+    background-color: #007bff;
+  }
+  .registerButton {
+    width: 100%;
+    padding: 8px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-top: 0px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .register-page {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    /* background-color: #000080; */
+    background-image: url("../images/loginbg.jpg");
+    background-size: cover;
+    position: relative;
+  }
+  .form3988 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: white;
+}
+.toggleFormButton32 {
+  width: 20vw;
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+  color: white;
+  background-color: #007bff;
+}
+.login-form32 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.registerButton32 {
+  width: 100%;
+  padding: 8px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 6%;
+}
+.register-container32 {
+  display: flex;
+  justify-content: center;
+  border-radius: 0px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-top: 20px;
+  height: 75vh;
+  width: 95vw;
+}
+}

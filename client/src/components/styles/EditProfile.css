@@ -1,0 +1,168 @@
+.edit-profile-saloon234 {
+  width: 92%;
+  margin-left: 4%;
+  margin-top: 0%;
+  
+  text-align: left;
+
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 6px 5px 6px rgba(0, 0, 0, 0.1);
+}
+.pad765{
+  padding: 1%;
+}
+.btnblock9 {
+  padding: 4px;
+  text-align: right;
+  background: #ccc;
+  margin-top: 2%;
+}
+.edit-profile-h2--saloon234 {
+  text-align: left;
+  padding: 5px;
+  background-color: #f0ecec;
+  box-shadow: 0px 0px 0px 1px bisque;
+  color: black;
+  font-size: 0.9rem;
+  margin-top: 0px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+
+  border: 1px solid #ccc;
+}
+
+.form-group-saloon234 {
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.lablenamesaloon234 {
+  width: 200px;
+  border: 0px;
+  border-width: 0px;
+  border-width: 2px;
+  text-align: right;
+  margin-right: 15px;
+  margin-left: 0%;
+}
+
+.form-group-saloon234-input {
+  width: 100%;
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+}
+.form-group-saloon234-input2 {
+  width: 28%;
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+}
+.form-group-saloon234-input::placeholder {
+  color: #999;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+.form-group-saloon234-input12 {
+  width: 100%;
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+}
+.update-btn-saloon234 {
+  padding: 7px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.update-btn-saloon234:hover {
+  background-color: #0056b3;
+}
+.profile-password {
+  position: absolute;
+  top: 50%;
+  right: 10px; 
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.password-input-container {
+  position: relative;
+  width: 28%;
+}
+.password-icon {
+  margin-left: -3%;
+}
+@media only screen and (max-width: 431px) {
+  .form-group-saloon234-input {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: small;
+}
+  .lablenamesaloon234 {
+    width: 130px;
+    font-size: small;
+    border: 0px;
+    border-width: 0px;
+    border-width: 2px;
+    text-align: left;
+    margin-right: 0px;
+    margin-left: 0%;
+}
+.password-input-container {
+  position: relative;
+  width: 60%;
+  padding: 4px;
+}
+  .password-icon {
+    margin-left: -12%;
+  }
+  .form-group-saloon234-input2 {
+    width: 60%;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: small;
+}
+.edit-profile-saloon234{
+  padding: 2%;
+}
+  
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .edit-profile-saloon234 {
+    width: 94%;
+    margin-left: 3%;
+    margin-top: 0%;
+    text-align: left;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 6px 5px 6px rgba(0, 0, 0, 0.1);
+  }
+ 
+  .form-group-saloon234-input {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+  .form-group-saloon234-input2 {
+    width: 40%;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+  .password-input-container {
+    position: relative;
+    width: 40%;
+  }
+}

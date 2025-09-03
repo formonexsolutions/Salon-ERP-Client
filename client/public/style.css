@@ -1,0 +1,7 @@
+.my-image {
+    background-image: url('%PUBLIC_URL%/URL.png');
+    width: 300px!important;
+    height: 10px; /* Adjust as needed */
+    background-size: cover; /* Adjust as needed */
+    background-repeat: no-repeat; /* Prevents repeating of the image */
+}

@@ -1,0 +1,379 @@
+.Branch_siv123 {
+  padding: 20px;
+  overflow: hidden;
+}
+
+.loading,
+.error_lkjh123 {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+}
+.kinne_iole {
+  overflow-x: auto;
+  margin-top: 15px;
+}
+
+.customer-container112 {
+  width: 96%;
+  margin-left: 2.5%;
+  margin-top: 0.5%;
+  margin-bottom: 3%;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  background-color: white;
+  box-shadow: 6px 5px 6px #ccc;
+}
+.kinne_iole {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.customer-container112 {
+  width: 92%;
+  margin-left: 4%;
+  margin-top: 0.5%;
+  margin-bottom: 1%;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  background-color: white;
+  box-shadow: 6px 5px 6px #ccc;
+}
+
+.yuhthgyg {
+  width: 95%;
+  border-collapse: collapse;
+}
+
+.yuhthgyg th td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.yuhthgyg th {
+  background-color: #f4f4f4;
+}
+
+.border-change890vh {
+  padding: 5px;
+  width: 30vh;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-left: 5px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.A7serin12 {
+  font-family: "Poppins";
+  margin: 1%;
+}
+
+button:focus {
+  outline: none;
+}
+
+.activate-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.deactivate-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.popup-container_siv909 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup_asd8709 {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 90%;
+  position: relative;
+}
+
+.popup_asd8709 .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.popup_asd8709 h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.popup_asd8709 label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.popup_asd8709 input[type="text"],
+.popup_asd8709 input[type="number"],
+.popup_asd8709 input[type="time"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.popup_asd8709 button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.popup_asd8709 button.save-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.popup_asd8709 button.cancel-btn {
+  background-color: #007bff;
+  color: #007bff;
+}
+
+.popup_asd8709 button.save-btn:hover,
+.popup_asd8709 button.cancel-btn:hover {
+  background-color: #0056b3;
+}
+
+
+.border-change890vh {
+  padding: 5px;
+  width: 20%;
+  text-align: left;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.entries-div12 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.entries-div12 .flex163 {
+  display: flex;
+  align-items: center;
+}
+
+.badges05 {
+  padding: 6px 12px;
+  margin: 0 2px 3px;
+  border: none;
+  font-size: small;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: #f4f4f4;
+}
+
+.badges05.AA {
+  background-color: #007bff;
+  color: white;
+}
+
+.badges05:hover {
+  background-color: #ddd;
+}
+.buttonContainermnop {
+  display: flex;
+  justify-content: space-between;
+}
+.saveButtonmnop {
+  background-color: #28a745;
+  color: white;
+}
+
+.cancelButtonmnop {
+  background-color: rgb(206, 7, 7);
+  color: white;
+}
+
+
+@media (max-width: 431px) {
+  .popup_asd8709 {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .popup_asd8709 h2 {
+    font-size: 20px;
+  }
+
+  .popup_asd8709 button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .popup_asd8709 input[type="text"],
+  .popup_asd8709 input[type="number"],
+  .popup_asd8709 input[type="time"] {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .A7serin12 {
+    display: block;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .border-change890vh {
+    width: 80%;
+    padding: 3px;
+    font-size: small;
+    margin-bottom: 10px;
+  }
+
+  .kinne_iole {
+    overflow-x: auto;
+  }
+
+  .entries-div12 {
+    flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+  }
+
+  .entries-div12 .flex163 {
+    margin-bottom: 7px;
+        font-size: small;
+  }
+
+  .badges05 {
+    padding: 4px 13px;
+    font-size: x-small;
+  }
+  .customer-container112 {
+    width: 100%;
+    margin-left: 0%;
+    margin-top: 0.5%;
+    margin-bottom: 1%;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    background-color: white;
+    box-shadow: 6px 5px 6px #ccc;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .popup_asd8709 {
+    width: 80%;
+    padding: 15px;
+  }
+
+  .popup_asd8709 h2 {
+    font-size: 22px;
+  }
+
+  .popup_asd8709 button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .popup_asd8709 input[type="text"],
+  .popup_asd8709 input[type="number"],
+  .popup_asd8709 input[type="time"] {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .customer-container112 {
+    width: 94%;
+    margin-left: 3%;
+    margin-top: 0.5%;
+    margin-bottom: 1%;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    background-color: white;
+    box-shadow: 6px 5px 6px #ccc;
+  }
+  .A7serin12 {
+    text-align: left;
+    padding-left: 0px;
+  }
+
+  .border-change890vh {
+    width: 30%;
+        font-size: small;
+  }
+
+  .entries-div12 {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .entries-div12 .flex163 {
+    margin-bottom: 15px;
+  }
+
+  .badges05 {
+    padding: 8px 12px;
+  }
+
+  .popup_asd8709 {
+    width: 70%;
+    padding: 20px;
+  }
+
+  .popup_asd8709 h2 {
+    font-size: 24px;
+  }
+
+  .popup_asd8709 button {
+    padding: 12px 25px;
+    font-size: 18px;
+  }
+
+  .popup_asd8709 input[type="text"],
+  .popup_asd8709 input[type="number"],
+  .popup_asd8709 input[type="time"] {
+    font-size: 18px;
+    padding: 12px;
+  }
+
+  .A7serin {
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .entries-div12 {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .entries-div12 .flex163 {
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,167 @@
+
+
+.pop-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(221, 194, 194, 0.6);
+}
+
+.pop {
+  width: 35%;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  max-height: 96vh;
+  overflow-y: auto;
+  position: relative;
+}
+.popupwif890{
+display: flex;
+flex-direction: column;
+}
+.popupwif89{
+  display: flex;
+  margin-left: 20%;
+}
+.popuppara89{
+  width: 130px;
+}
+.popuppara894{
+  width: 180px;
+}
+.salon-name-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.salon-name-header h1 {
+  font-size: 2.5vh;
+  margin: 0;
+}
+
+.div_3_cont_sa {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.pop_inner {
+  text-align: left;
+  cursor: pointer;
+}
+
+.hhh_burr_sa {
+  text-align: center;
+}
+
+.butt_close {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 2vh;
+}
+
+.butt_close:hover {
+  background-color: #0056b3;
+}
+
+.detail p {
+  margin: 10px 0;
+  font-size: 2vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hehe_sa_gaga
+{
+  color:black;
+  cursor: pointer;
+  font-size: 3vh;
+}
+.hehe_sa_gaga:hover
+{
+  color:#007bff;
+}
+.he_sa_heh_ss
+{
+  font-size: 4vh !important;
+}
+@media (max-width:767px){
+  .pop {
+    width: 96%;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    max-height: 96vh;
+    overflow-y: auto;
+    position: relative;
+}
+.popupwif89 {
+  display: flex;
+  margin-left: 4%;
+  font-size: small;
+}
+.popuppara89 {
+  width: 110px;
+  margin: 0px;
+}
+.popuppara894 {
+  width: 140px;
+}
+.butt_close {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 15px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.hehe_sa_gaga {
+  color: black;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+}
+}
+@media (min-width: 768px) and (max-width: 1024px){
+  .pop {
+    width: 60%;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    max-height: 96vh;
+    overflow-y: auto;
+    position: relative;
+}
+.butt_close {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 7px 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.hehe_sa_gaga {
+  color: black;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+}
+}
