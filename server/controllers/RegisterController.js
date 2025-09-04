@@ -240,17 +240,150 @@ exports.updateProfile = async (req, res) => {
   }
 }
 
-exports.registerSalon = async (req, res) => {
+// Step 1: Send OTP for phone verification during registration
+exports.sendRegistrationOtp = async (req, res) => {
   try {
-    const { SalonName, adminName, phoneNumber, gst, password, state, city, address, createdBy } = req.body;
+    const { phoneNumber } = req.body;
 
+    if (!phoneNumber) {
+      return res.status(400).json({ error: 'Phone number is required' });
+    }
+
+    // Check if phone number is already registered
     const existingStaff = await Staff.findOne({ phoneNumber });
     if (existingStaff) {
       return res.status(400).json({ error: 'Phone number already registered' });
     }
 
-    const hashedPassword = await bcrypt.hash(password, 10);
+    // Generate OTP
     const otp = generateOtp();
+
+    // Store OTP temporarily (you might want to use Redis or temporary collection)
+    // For now, we'll store in memory or use a temporary field
+    const tempOtpData = {
+      phoneNumber,
+      otp,
+      timestamp: Date.now(),
+      verified: false
+    };
+
+    // In production, use Redis or temporary database storage
+    // For now, we'll store in a temporary collection or memory
+    // Here we'll use a simple in-memory store (you should replace with Redis)
+    global.registrationOtps = global.registrationOtps || new Map();
+    global.registrationOtps.set(phoneNumber, tempOtpData);
+
+    // Send OTP
+    try {
+      const result = await sendOtp(phoneNumber, otp);
+      
+      if (result.success || result.fallback) {
+        return res.status(200).json({ 
+          message: 'OTP sent successfully for registration verification',
+          otpSent: true,
+          phoneNumber: phoneNumber
+        });
+      } else {
+        return res.status(500).json({ error: 'Failed to send OTP. Please try again.' });
+      }
+    } catch (error) {
+      console.error('OTP sending error:', error.message);
+      return res.status(500).json({ error: 'Failed to send OTP. Please try again.' });
+    }
+
+  } catch (error) {
+    console.error('Error in sendRegistrationOtp:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};
+
+// Step 2: Verify OTP for registration
+exports.verifyRegistrationOtp = async (req, res) => {
+  try {
+    const { phoneNumber, otp } = req.body;
+
+    if (!phoneNumber || !otp) {
+      return res.status(400).json({ error: 'Phone number and OTP are required' });
+    }
+
+    // Get stored OTP data
+    global.registrationOtps = global.registrationOtps || new Map();
+    const storedOtpData = global.registrationOtps.get(phoneNumber);
+
+    if (!storedOtpData) {
+      return res.status(400).json({ error: 'OTP not found or expired. Please request a new OTP.' });
+    }
+
+    // Check OTP expiry (5 minutes)
+    const otpAge = Date.now() - storedOtpData.timestamp;
+    const otpExpiryTime = 5 * 60 * 1000; // 5 minutes in milliseconds
+
+    if (otpAge > otpExpiryTime) {
+      global.registrationOtps.delete(phoneNumber);
+      return res.status(400).json({ error: 'OTP expired. Please request a new OTP.' });
+    }
+
+    // Verify OTP
+    if (storedOtpData.otp !== otp) {
+      return res.status(400).json({ error: 'Invalid OTP. Please try again.' });
+    }
+
+    // Mark as verified
+    storedOtpData.verified = true;
+    global.registrationOtps.set(phoneNumber, storedOtpData);
+
+    res.status(200).json({ 
+      message: 'Phone number verified successfully. You can now complete registration.',
+      verified: true,
+      phoneNumber: phoneNumber
+    });
+
+  } catch (error) {
+    console.error('Error in verifyRegistrationOtp:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};
+
+// Step 3: Complete salon registration (only after OTP verification)
+exports.registerSalon = async (req, res) => {
+  try {
+    const { SalonName, adminName, phoneNumber, gst, password, state, city, address, createdBy } = req.body;
+
+    if (!phoneNumber) {
+      return res.status(400).json({ error: 'Phone number is required' });
+    }
+
+    // Check if phone number is verified
+    global.registrationOtps = global.registrationOtps || new Map();
+    const otpData = global.registrationOtps.get(phoneNumber);
+
+    if (!otpData || !otpData.verified) {
+      return res.status(400).json({ 
+        error: 'Phone number not verified. Please verify your phone number with OTP first.',
+        requiresOtpVerification: true
+      });
+    }
+
+    // Check OTP verification age (allow 10 minutes after verification)
+    const verificationAge = Date.now() - otpData.timestamp;
+    const verificationExpiryTime = 10 * 60 * 1000; // 10 minutes
+
+    if (verificationAge > verificationExpiryTime) {
+      global.registrationOtps.delete(phoneNumber);
+      return res.status(400).json({ 
+        error: 'Phone verification expired. Please verify your phone number again.',
+        requiresOtpVerification: true
+      });
+    }
+
+    // Double-check if phone number is already registered
+    const existingStaff = await Staff.findOne({ phoneNumber });
+    if (existingStaff) {
+      global.registrationOtps.delete(phoneNumber);
+      return res.status(400).json({ error: 'Phone number already registered' });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
 
     const salon_id = await generateSalonID();
     const salon = new Salon({
@@ -276,36 +409,20 @@ exports.registerSalon = async (req, res) => {
       createdBy,
       createdAt: moment().tz('Asia/Kolkata').format(),
       salon_id, // Store salon_id in staff collection
-      otp,
+      phoneVerified: true, // Mark as verified
     });
     await staff.save();
     
-    // Send OTP to the user's mobile number via SMS
-    let otpSent = false;
-    try {
-      const result = await sendOtp(phoneNumber, otp);
-      otpSent = result.success || result.fallback; // Consider fallback as success for development
-    } catch (err) {
-      console.error('OTP sending threw error:', err.message);
-    }
-    
-    if (!otpSent) {
-      // For development/testing: Don't rollback, just return success with warning
-      // In production, you might want to rollback on OTP failure
-      console.log('OTP sending failed, but registration completed');
-      return res.status(201).json({ 
-        message: 'Salon registered successfully, but OTP could not be sent. Please contact support for verification.', 
-        salon_id: salon.salon_id,
-        otpSent: false,
-        warning: 'OTP service temporarily unavailable'
-      });
-    }
+    // Clean up OTP data after successful registration
+    global.registrationOtps.delete(phoneNumber);
 
     res.status(201).json({ 
-      message: 'Salon registered successfully. OTP sent to phone.', 
+      message: 'Salon registered successfully with verified phone number!', 
       salon_id: salon.salon_id,
-      otpSent: true 
+      verified: true,
+      success: true
     });
+
   } catch (error) {
     console.error('Error registering salon:', error);
     if (error.code === 11000 && error.keyPattern && error.keyPattern.staff_id) {

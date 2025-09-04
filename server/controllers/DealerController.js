@@ -5,6 +5,10 @@ const State = require('../models/Statemodel');
 const City = require('../models/Citymodel');
 const Area = require('../models/Areamodel');
 const moment = require('moment-timezone');
+const otpService = require('../services/otpService'); // Import the centralized OTP service
+
+// Global storage for login OTPs (use Redis in production)
+global.dealerLoginOtps = global.dealerLoginOtps || new Map();
 // Function to generate a 6-digit OTP
 
 const generateDealerID = async () => {
@@ -395,6 +399,119 @@ const dealerLogin = async (req, res) => {
   }
 };
 
+// Send OTP for dealer login
+const sendDealerLoginOtp = async (req, res) => {
+  try {
+    const { phoneNumber } = req.body;
+
+    if (!phoneNumber) {
+      return res.status(400).json({ message: 'Phone number is required' });
+    }
+
+    // Check if dealer exists and is active
+    const dealer = await Dealer.findOne({ phoneNumber });
+    if (!dealer) {
+      return res.status(404).json({ message: 'Dealer not found with this phone number' });
+    }
+
+    if (dealer.status !== "AA") {
+      return res.status(401).json({
+        message: "Your Account status is deactivated. Please contact your SuperAdmin for activation.",
+      });
+    }
+
+    // Generate and send OTP
+    const otp = otpService.generateOtp();
+    
+    try {
+      await otpService.sendOtp(phoneNumber, otp);
+      
+      // Store OTP with timestamp
+      global.dealerLoginOtps.set(phoneNumber, {
+        otp,
+        timestamp: Date.now(),
+      });
+
+      res.status(200).json({ 
+        message: 'OTP sent successfully to your registered mobile number',
+        otpSent: true 
+      });
+    } catch (otpError) {
+      console.error('Error sending OTP:', otpError);
+      res.status(500).json({ 
+        message: 'Failed to send OTP. Please try again.',
+        otpSent: false 
+      });
+    }
+
+  } catch (error) {
+    console.error('Error in sendDealerLoginOtp:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+};
+
+// Verify OTP and login dealer
+const verifyDealerLoginOtp = async (req, res) => {
+  try {
+    const { phoneNumber, otp } = req.body;
+
+    if (!phoneNumber || !otp) {
+      return res.status(400).json({ message: 'Phone number and OTP are required' });
+    }
+
+    // Check if OTP exists
+    const storedOtpData = global.dealerLoginOtps.get(phoneNumber);
+    if (!storedOtpData) {
+      return res.status(400).json({ message: 'OTP not found or expired. Please request a new OTP.' });
+    }
+
+    // Check OTP expiry (5 minutes)
+    const otpAge = Date.now() - storedOtpData.timestamp;
+    const otpExpiryTime = 5 * 60 * 1000; // 5 minutes
+
+    if (otpAge > otpExpiryTime) {
+      global.dealerLoginOtps.delete(phoneNumber);
+      return res.status(400).json({ message: 'OTP expired. Please request a new OTP.' });
+    }
+
+    // Verify OTP
+    if (storedOtpData.otp !== otp) {
+      return res.status(400).json({ message: 'Invalid OTP. Please try again.' });
+    }
+
+    // Get dealer details
+    const dealer = await Dealer.findOne({ phoneNumber });
+    if (!dealer) {
+      return res.status(404).json({ message: 'Dealer not found' });
+    }
+
+    if (dealer.status !== "AA") {
+      return res.status(401).json({
+        message: "Your Account status is deactivated. Please contact your SuperAdmin for activation.",
+      });
+    }
+
+    // Clean up OTP after successful verification
+    global.dealerLoginOtps.delete(phoneNumber);
+
+    // Login successful - return dealer info (similar to password login)
+    res.status(200).json({
+      success: true,
+      message: 'Login successful',
+      dealer_id: dealer.dealer_id,
+      DealerName: dealer.DealerName,
+      CompanyName: dealer.CompanyName,
+      phoneNumber: dealer.phoneNumber,
+      token: 'dealer-token', // Add proper JWT token generation if needed
+      role: 'dealer'
+    });
+
+  } catch (error) {
+    console.error('Error in verifyDealerLoginOtp:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+};
+
 
 
 const dealerForgotPassword = async (req, res) => {
@@ -680,11 +797,26 @@ const importDealers = async (req, res) => {
 };
 
 
-module.exports = { registerDealer,
+module.exports = { 
+  registerDealer,
   dealerLogin,
+  sendDealerLoginOtp,
+  verifyDealerLoginOtp,
   dealerForgotPassword,
   dealerVerifyOtp,
   dealerResetPassword,
   getAllDealers,
-  getDealerByPhoneNumber,verifyOtp,addStauts,updateActivationStatus,getDistinctStates,getCitiesByState, getAreasByStateAndCity, getDealersByStateCityArea,getDealerById,importDealers}
+  getDealerByPhoneNumber,
+  verifyOtp,
+  addStauts,
+  updateActivationStatus,
+  getDistinctStates,
+  getCitiesByState, 
+  getAreasByStateAndCity, 
+  getDealersByStateCityArea,
+  getDealerById,
+  importDealers,
+  sendDealerLoginOtp,
+  verifyDealerLoginOtp
+};
 

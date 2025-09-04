@@ -37,8 +37,9 @@ const Register = () => {
   });
 
   const [otp, setOtp] = useState("");
-  const [otpSent, setOtpSent] = useState(false);
-  const [otpVerified, setOtpVerified] = useState(false);
+  const [isVerifyingOtp, setIsVerifyingOtp] = useState(false);
+  const [isSendingOtp, setIsSendingOtp] = useState(false);
+  const [registrationStep, setRegistrationStep] = useState(1); // 1: form, 2: otp verification, 3: success
 
   const [allStates, setAllStates] = useState([]);
   const [filteredStates, setFilteredStates] = useState([]);
@@ -136,11 +137,55 @@ const Register = () => {
         return;
     }
 
+    // Step 1: Send OTP for phone verification (mandatory)
     try {
-      const response = await axios.post(`${BASE_URL}/api/register`, data);
-      if (response.status === 201) {
-        const { salon_id, otpSent, warning } = response.data; // Extract salon_id and otpSent from response
-  
+      setIsSendingOtp(true);
+      const response = await axios.post(`${BASE_URL}/api/send-registration-otp`, {
+        phoneNumber: data.phoneNumber
+      });
+      
+      if (response.status === 200) {
+        toast.success('OTP sent to your phone number. Please verify to continue registration.');
+        setRegistrationStep(2);
+        setMessage('');
+      }
+    } catch (error) {
+      if (error.response) {
+        setMessage(error.response.data.error || 'Failed to send OTP. Please try again.');
+        toast.error(error.response.data.error || 'Failed to send OTP');
+      } else {
+        setMessage('Network error. Please check your connection.');
+        toast.error('Network error. Please check your connection.');
+      }
+    } finally {
+      setIsSendingOtp(false);
+    }
+  };
+
+const verifyOtpHandler = async () => {
+  if (!otp || otp.length !== 6) {
+    setMessage('Please enter a valid 6-digit OTP');
+    return;
+  }
+
+  try {
+    setIsVerifyingOtp(true);
+    
+    // Step 2: Verify OTP
+    const verifyResponse = await axios.post(`${BASE_URL}/api/verify-registration-otp`, {
+      phoneNumber: data.phoneNumber,
+      otp: otp,
+    });
+
+    if (verifyResponse.status === 200) {
+      toast.success("Phone number verified successfully!");
+      
+      // Step 3: Complete registration after OTP verification
+      const registrationResponse = await axios.post(`${BASE_URL}/api/register`, data);
+      
+      if (registrationResponse.status === 201) {
+        const { salon_id } = registrationResponse.data;
+        
         // Store registered data and salon_id in local storage
         const registeredData = {
           SalonName: data.SalonName,
@@ -151,87 +196,90 @@ const Register = () => {
           address: data.address,
           createdAt: new Date().toISOString(),
         };
-  
-        localStorage.setItem('salon_id', salon_id); // Store salon_id in localStorage
-        localStorage.setItem('registeredData', JSON.stringify(registeredData)); // Store registered data
-  
-        if (otpSent) {
-          toast.success('Registered Successfully! OTP sent to your phone.');
-          setOtpSent(true);
-        } else {
-          toast.warning(warning || 'Registration successful, but OTP could not be sent. Please contact support.');
-          // Skip OTP verification and go directly to subscription
-          navigate("/Subscription");
-        }
-        setMessage('');
-      }
-    } catch (error) {
-      if (error.response) {
-        setMessage(error.response.data.error || 'Unknown error occurred');
-      } else {
-        setMessage('Unknown error occurred');
-      }
-    }
-  };
-
-  
-
-const verifyOtpHandler = async () => {
-  try {
-    const response = await axios.post(`${BASE_URL}/api/verify-otp`, {
-      phoneNumber: data.phoneNumber, // Use the phoneNumber from the state
-      otp: otp, // Use the OTP entered by the user
-    });
-
-    if (response.status === 200) {
-      const { data: otpData } = response;
-      if (otpData.success) {
-        console.log('OTP verified successfully. Received salon_id:', otpData.salon_id);
-        toast.success("OTP verified successfully!");
-        setOtpVerified(true); // Set state to indicate OTP is verified
-
+        
+        localStorage.setItem('salon_id', salon_id);
+        localStorage.setItem('registeredData', JSON.stringify(registeredData));
+        
         // Create initial payment record
-        const paymentResponse = await axios.post(`${BASE_URL}/api/payment/create-initial-payment`, { salon_id: otpData.salon_id, phoneNumber:otpData.phoneNumber });
-        if (paymentResponse.data.success) {
-          console.log('Initial payment record created successfully');
-        } else {
-          console.error('Failed to create initial payment record');
+        try {
+          const paymentResponse = await axios.post(`${BASE_URL}/api/payment/create-initial-payment`, { 
+            salon_id: salon_id, 
+            phoneNumber: data.phoneNumber 
+          });
+          if (paymentResponse.data.success) {
+            console.log('Initial payment record created successfully');
+          }
+        } catch (paymentError) {
+          console.error('Failed to create initial payment record:', paymentError);
         }
 
-        navigate("/Subscription");
-        // Additional actions upon successful verification
-
-        // Reset form data after successful OTP verification
+        toast.success("Registration completed successfully!");
+        setRegistrationStep(3);
+        
+        // Navigate to subscription after a brief delay
+        setTimeout(() => {
+          navigate("/Subscription");
+        }, 2000);
+        
+        // Reset form data
         setData({
           adminName: "",
           SalonName: "",
           phoneNumber: "",
+          gst: "",
           password: "",
           confirmpassword: "",
           state: "",
           city: "",
-          address:"",
+          address: "",
           createdBy: "admin",
           createdAt: new Date().toISOString(),
-          otpVerified: true,
+          otpVerified: false,
         });
-      } else {
-        toast.error("Invalid OTP. Please try again.");
-        // Handle invalid OTP scenario
+        setOtp("");
+        setMessage('');
       }
-    } else {
-      toast.error("Failed to verify OTP. Please try again.");
-      // Handle other HTTP status codes if necessary
     }
   } catch (error) {
-    toast.error("Failed to verify OTP. Please try again.");
-    console.error("Error verifying OTP:", error);
+    if (error.response) {
+      const errorMsg = error.response.data.error || 'OTP verification failed';
+      setMessage(errorMsg);
+      toast.error(errorMsg);
+    } else {
+      setMessage('Network error. Please try again.');
+      toast.error('Network error. Please try again.');
+    }
+  } finally {
+    setIsVerifyingOtp(false);
   }
 };
 
+// Function to resend OTP
+const resendOtpHandler = async () => {
+  try {
+    setIsSendingOtp(true);
+    const response = await axios.post(`${BASE_URL}/api/send-registration-otp`, {
+      phoneNumber: data.phoneNumber
+    });
+    
+    if (response.status === 200) {
+      toast.success('New OTP sent to your phone number.');
+      setMessage('');
+    }
+  } catch (error) {
+    if (error.response) {
+      setMessage(error.response.data.error || 'Failed to resend OTP');
+      toast.error(error.response.data.error || 'Failed to resend OTP');
+    } else {
+      setMessage('Network error. Please try again.');
+      toast.error('Network error. Please try again.');
+    }
+  } finally {
+    setIsSendingOtp(false);
+  }
+};
 
-
-  const handleOtpChange = (e, index) => {
+const handleOtpChange = (e, index) => {
     const { value } = e.target;
     if (/^[0-9]$/.test(value) || value === "") {
       const otpArray = otp.split("");
@@ -502,8 +550,13 @@ const verifyOtpHandler = async () => {
       />
     </div>
   </div>
-            <button type="submit" className="registerButton">
-              Register
+            <button 
+              type="submit" 
+              className="registerButton"
+              disabled={isSendingOtp || (registrationStep === 2)}
+            >
+              {isSendingOtp ? 'Sending OTP...' : 
+               registrationStep === 1 ? 'Send OTP' : 'Register'}
             </button>
             <div className="click_butt_renrewal">
             <span className="span12">
@@ -512,10 +565,11 @@ const verifyOtpHandler = async () => {
             </div>
             {message && <p className="errorMessage">{message}</p>}
           </form>
-          
-          {otpSent && !otpVerified && (
+          {registrationStep === 2 && (
             <div className="otp-modal">
               <div className="otp-modal-content">
+                <h4>Phone Verification Required</h4>
+                <p>Please enter the 6-digit OTP sent to +91-{data.phoneNumber}</p>
                 <label htmlFor="otp" className="otp-label">Enter OTP</label>
                 <div className="otp-inputs">
                   {[...Array(6)].map((_, index) => (
@@ -531,7 +585,32 @@ const verifyOtpHandler = async () => {
                     />
                   ))}
                 </div>
-                <button onClick={verifyOtpHandler} className="verify-otp-button">Verify OTP</button>
+                <div className="otp-actions">
+                  <button 
+                    onClick={verifyOtpHandler} 
+                    className="verify-otp-button"
+                    disabled={isVerifyingOtp || otp.length !== 6}
+                  >
+                    {isVerifyingOtp ? 'Verifying...' : 'Verify OTP'}
+                  </button>
+                  <button 
+                    onClick={resendOtpHandler} 
+                    className="resend-otp-button"
+                    disabled={isSendingOtp}
+                  >
+                    {isSendingOtp ? 'Sending...' : 'Resend OTP'}
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+          
+          {registrationStep === 3 && (
+            <div className="success-modal">
+              <div className="success-content">
+                <h4>✅ Registration Successful!</h4>
+                <p>Your salon has been registered successfully with verified phone number.</p>
+                <p>Redirecting to subscription page...</p>
               </div>
             </div>
           )}

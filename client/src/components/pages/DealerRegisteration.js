@@ -46,16 +46,78 @@ const Register = () => {
   //   otp: "",
   // });
   const [submitting, setSubmitting] = useState(false);
+  const [loginMethod, setLoginMethod] = useState("password"); // "password" or "otp"
   const [loginData, setLoginData] = useState({
     phoneNumber: "",
     password: "",
+    otp: "",
   });
+  const [otpSent, setOtpSent] = useState(false);
+  const [otpTimer, setOtpTimer] = useState(0);
+  const [canResendOtp, setCanResendOtp] = useState(false);
   const handleLoginDataChange = (e) => {
     const { name, value } = e.target;
     setLoginData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
+  };
+
+  const handleLoginMethodToggle = (method) => {
+    setLoginMethod(method);
+    setLoginData({
+      phoneNumber: loginData.phoneNumber,
+      password: "",
+      otp: "",
+    });
+    setOtpSent(false);
+    setOtpTimer(0);
+    setCanResendOtp(false);
+  };
+
+  const handleSendLoginOtp = async () => {
+    if (!loginData.phoneNumber) {
+      toast.error("Please enter mobile number");
+      return;
+    }
+
+    try {
+      const response = await axios.post(`${BASE_URL}/api/dealers/send-login-otp`, {
+        phoneNumber: loginData.phoneNumber,
+      });
+
+      if (response.data.message) {
+        toast.success(response.data.message);
+        setOtpSent(true);
+        setOtpTimer(30); // Start 30-second timer
+        setCanResendOtp(false);
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error(error.response?.data?.message || "Failed to send OTP");
+    }
+  };
+
+  const handleResendLoginOtp = async () => {
+    if (!canResendOtp) {
+      toast.warning("Please wait before requesting a new OTP");
+      return;
+    }
+
+    try {
+      const response = await axios.post(`${BASE_URL}/api/dealers/send-login-otp`, {
+        phoneNumber: loginData.phoneNumber,
+      });
+
+      if (response.data.message) {
+        toast.success("New OTP sent successfully!");
+        setOtpTimer(30); // Restart 30-second timer
+        setCanResendOtp(false);
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error(error.response?.data?.message || "Failed to resend OTP");
+    }
   };
 
   const handleLoginSubmit = async (e) => {
@@ -65,10 +127,33 @@ const Register = () => {
     console.log("Login data being submitted:", loginData); // Add this line
 
     try {
-      const response = await axios.post(
-        `${BASE_URL}/api/dealers/login`,
-        loginData
-      );
+      let response;
+      
+      if (loginMethod === "password") {
+        // Password-based login
+        response = await axios.post(
+          `${BASE_URL}/api/dealers/login`,
+          {
+            phoneNumber: loginData.phoneNumber,
+            password: loginData.password
+          }
+        );
+      } else {
+        // OTP-based login
+        if (!otpSent) {
+          toast.error("Please send OTP first");
+          setSubmitting(false);
+          return;
+        }
+        
+        response = await axios.post(
+          `${BASE_URL}/api/dealers/verify-login-otp`,
+          {
+            phoneNumber: loginData.phoneNumber,
+            otp: loginData.otp
+          }
+        );
+      }
 
       localStorage.setItem("token", response.data.token);
       localStorage.setItem("userRole", response.data.role);
@@ -199,7 +284,6 @@ const Register = () => {
   };
 
   const [otp, setOtp] = useState("");
-  const [otpSent, setOtpSent] = useState(false);
   const [otpVerified, /*setOtpVerified*/] = useState(false);
 
   const [allStates, setAllStates] = useState([]);
@@ -210,6 +294,23 @@ const Register = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  // Timer effect for OTP resend functionality
+  useEffect(() => {
+    let interval;
+    if (otpTimer > 0) {
+      interval = setInterval(() => {
+        setOtpTimer((prevTimer) => {
+          if (prevTimer <= 1) {
+            setCanResendOtp(true);
+            return 0;
+          }
+          return prevTimer - 1;
+        });
+      }, 1000);
+    }
+    return () => clearInterval(interval);
+  }, [otpTimer]);
 
   const fetchData = async () => {
     try {
@@ -626,6 +727,42 @@ const Register = () => {
 
           ) : (<form onSubmit={handleLoginSubmit} className="login-form32">
             <h5 className="formHeading32">Distributor Login</h5>
+            
+            {/* Login Method Toggle */}
+            <div className="login-method-selector">
+              <p className="selector-label">Choose Login Method</p>
+              <div className="toggle-container">
+                <div className="toggle-wrapper">
+                  <input
+                    type="radio"
+                    id="password-method"
+                    name="loginMethod"
+                    value="password"
+                    checked={loginMethod === "password"}
+                    onChange={() => handleLoginMethodToggle("password")}
+                  />
+                  <label htmlFor="password-method" className="toggle-label">
+                    <span className="toggle-icon">🔒</span>
+                    <span className="toggle-text">Password Login</span>
+                  </label>
+                </div>
+                <div className="toggle-wrapper">
+                  <input
+                    type="radio"
+                    id="otp-method"
+                    name="loginMethod"
+                    value="otp"
+                    checked={loginMethod === "otp"}
+                    onChange={() => handleLoginMethodToggle("otp")}
+                  />
+                  <label htmlFor="otp-method" className="toggle-label">
+                    <span className="toggle-icon">📱</span>
+                    <span className="toggle-text">OTP Login</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            
             <input
               type="text"
               name="phoneNumber"
@@ -635,26 +772,66 @@ const Register = () => {
               required
               className="input-field32"
             />
-            <div className="password-container">
-              <input
-                type={showPassword ? "text" : "password"}
-                name="password"
-                placeholder="Password"
-                value={loginData.password}
-                onChange={handleLoginDataChange}
-                required
-                minLength={8}
-                maxLength={16}
-                className="input-field32 password-input32"
-              />
-              <span className="password-toggle-icon32" onClick={togglePasswordVisibility}>
-                {showPassword ? <FaEyeSlash /> : <FaEye />}
-              </span>
-            </div>
+            
+            {loginMethod === "password" ? (
+              <div className="password-container">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  name="password"
+                  placeholder="Password"
+                  value={loginData.password}
+                  onChange={handleLoginDataChange}
+                  required
+                  minLength={8}
+                  maxLength={16}
+                  className="input-field32 password-input32"
+                />
+                <span className="password-toggle-icon32" onClick={togglePasswordVisibility}>
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </span>
+              </div>
+            ) : (
+              <div className="otp-section">
+                <input
+                  type="text"
+                  name="otp"
+                  placeholder="Enter OTP"
+                  value={loginData.otp}
+                  onChange={handleLoginDataChange}
+                  required
+                  maxLength={6}
+                  className="input-field32"
+                  disabled={!otpSent}
+                />
+                <div className="otp-button-container">
+                  <button
+                    type="button"
+                    className="send-otp-btn"
+                    onClick={handleSendLoginOtp}
+                    disabled={!loginData.phoneNumber || (otpSent && !canResendOtp)}
+                  >
+                    {otpSent 
+                      ? (canResendOtp ? "Send OTP" : `Resend in ${otpTimer}s`)
+                      : "Send OTP"
+                    }
+                  </button>
+                  {otpSent && canResendOtp && (
+                    <button
+                      type="button"
+                      className="resend-otp-btn"
+                      onClick={handleResendLoginOtp}
+                    >
+                      Resend OTP
+                    </button>
+                  )}
+                </div>
+              </div>
+            )}
+            
             <button
               type="submit"
               className="registerButton32"
-              disabled={submitting}
+              disabled={submitting || (loginMethod === "otp" && !otpSent)}
             >
               {submitting ? "Logging in..." : "Login"}
             </button>

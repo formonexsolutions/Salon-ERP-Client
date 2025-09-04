@@ -17,6 +17,7 @@ const StaffSchema = new mongoose.Schema({
   },
   otp: { type: String }, 
   loginOtp: { type: String }, // OTP for login authentication
+  phoneVerified: { type: Boolean, default: false }, // Track phone verification status
 });
 
 const Staff = mongoose.model('Staff', StaffSchema);

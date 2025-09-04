@@ -4,8 +4,11 @@ const router = express.Router();
 const salonController = require('../controllers/RegisterController'); // Import your controller functions
 const { sendOTP } = require('../controllers/RegisterController');
 
+// NEW: OTP verification routes for registration
+router.post('/send-registration-otp', salonController.sendRegistrationOtp);
+router.post('/verify-registration-otp', salonController.verifyRegistrationOtp);
 
-// Route for salon registration
+// Route for salon registration (now requires prior OTP verification)
 router.post('/register', salonController.registerSalon);
 router.post('/EchangePassword', salonController.changePassword);
 router.post('/updateUsername',salonController.updateUsername);

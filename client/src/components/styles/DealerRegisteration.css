@@ -257,4 +257,279 @@
   height: 75vh;
   width: 95vw;
 }
+
+/* Modern Login Method Selector */
+.login-method-selector {
+  margin-bottom: 30px;
+}
+
+.selector-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.toggle-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.toggle-wrapper {
+  position: relative;
+  flex: 1;
+  max-width: 200px;
+}
+
+.toggle-wrapper input[type="radio"] {
+  display: none;
+}
+
+.toggle-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 15px;
+  border: 2px solid #e9ecef;
+  border-radius: 15px;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.toggle-label::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 123, 255, 0.1) 0%, rgba(0, 86, 179, 0.1) 100%);
+  transition: left 0.3s ease;
+}
+
+.toggle-wrapper input[type="radio"]:checked + .toggle-label {
+  border-color: #007bff;
+  background-color: #fff;
+  color: #007bff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.2);
+}
+
+.toggle-wrapper input[type="radio"]:checked + .toggle-label::before {
+  left: 0;
+}
+
+.toggle-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+  transition: transform 0.3s ease;
+}
+
+.toggle-wrapper input[type="radio"]:checked + .toggle-label .toggle-icon {
+  transform: scale(1.2);
+}
+
+.toggle-text {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.toggle-label:hover {
+  border-color: #007bff;
+  background-color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.15);
+}
+
+.toggle-label:hover .toggle-icon {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .toggle-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .toggle-wrapper {
+    max-width: none;
+  }
+  
+  .toggle-label {
+    flex-direction: row;
+    justify-content: center;
+    padding: 15px;
+  }
+  
+  .toggle-icon {
+    margin-bottom: 0;
+    margin-right: 10px;
+    font-size: 20px;
+  }
+}
+
+/* OTP Section Styles for Dealer Login */
+.otp-section {
+  margin-bottom: 20px;
+}
+
+.otp-button-container {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.send-otp-btn {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+  min-width: 120px;
+}
+
+.send-otp-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+}
+
+.send-otp-btn:disabled {
+  background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+  cursor: not-allowed;
+  color: #fff;
+  transform: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.resend-otp-btn {
+  background: transparent;
+  color: #007bff;
+  border: 2px solid #007bff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-width: 100px;
+}
+
+.resend-otp-btn:hover {
+  background-color: #007bff;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Enhanced Input Field Styling */
+.input-field32 {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
+  margin-bottom: 15px;
+}
+
+.input-field32:focus {
+  outline: none;
+  border-color: #007bff;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.input-field32:disabled {
+  background-color: #e9ecef;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Enhanced Password Container */
+.password-container {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.password-input32 {
+  margin-bottom: 0;
+  padding-right: 50px;
+}
+
+.password-toggle-icon32 {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #6c757d;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.password-toggle-icon32:hover {
+  color: #007bff;
+}
+
+/* Enhanced Login Button */
+.registerButton32 {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+  margin-top: 10px;
+}
+
+.registerButton32:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+.registerButton32:disabled {
+  background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Forgot Password Link */
+.forgot-password-link {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: underline;
+  margin-top: 15px;
+  transition: color 0.3s ease;
+}
+
+.forgot-password-link:hover {
+  color: #0056b3;
+}
 }

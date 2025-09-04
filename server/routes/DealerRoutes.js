@@ -17,6 +17,8 @@ router.get('/dealers/:phoneNumber', dealerController.getDealerByPhoneNumber);
 router.put('/dealerupdate/:id', dealerController.addStauts);
 router.post('/verifyotp',dealerController.verifyOtp)
 router.post('/dealers/login', dealerController.dealerLogin);
+router.post('/dealers/send-login-otp', dealerController.sendDealerLoginOtp);
+router.post('/dealers/verify-login-otp', dealerController.verifyDealerLoginOtp);
 router.post('/dealers/forgot-password', dealerController.dealerForgotPassword);
 router.post('/dealers/verify-otp', dealerController.dealerVerifyOtp);
 router.post('/dealers/reset-password', dealerController.dealerResetPassword);

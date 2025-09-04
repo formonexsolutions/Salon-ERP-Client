@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
@@ -21,6 +21,10 @@ const Loginforsa = () => {
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [otpSent, setOtpSent] = useState(false);
+  const [otpTimer, setOtpTimer] = useState(0);
+  const [canResendOtp, setCanResendOtp] = useState(false);
+  const [forgotPasswordOtpTimer, setForgotPasswordOtpTimer] = useState(0);
+  const [canResendForgotPasswordOtp, setCanResendForgotPasswordOtp] = useState(false);
   const navigate = useNavigate();
   const [showForgotPasswordPopup, setShowForgotPasswordPopup] = useState(false);
   const [forgotPasswordData, setForgotPasswordData] = useState({
@@ -31,6 +35,40 @@ const Loginforsa = () => {
     otpVerified: false,
   });
 
+  // Timer effect for OTP resend functionality
+  useEffect(() => {
+    let interval;
+    if (otpTimer > 0) {
+      interval = setInterval(() => {
+        setOtpTimer((prevTimer) => {
+          if (prevTimer <= 1) {
+            setCanResendOtp(true);
+            return 0;
+          }
+          return prevTimer - 1;
+        });
+      }, 1000);
+    }
+    return () => clearInterval(interval);
+  }, [otpTimer]);
+
+  // Timer effect for forgot password OTP resend functionality
+  useEffect(() => {
+    let interval;
+    if (forgotPasswordOtpTimer > 0) {
+      interval = setInterval(() => {
+        setForgotPasswordOtpTimer((prevTimer) => {
+          if (prevTimer <= 1) {
+            setCanResendForgotPasswordOtp(true);
+            return 0;
+          }
+          return prevTimer - 1;
+        });
+      }, 1000);
+    }
+    return () => clearInterval(interval);
+  }, [forgotPasswordOtpTimer]);
+
   const handleToggleLogin = () => {
     setIsSuperAdminLogin(!isSuperAdminLogin);
     setError("");
@@ -40,6 +78,8 @@ const Loginforsa = () => {
       otp: "",
     });
     setOtpSent(false);
+    setOtpTimer(0);
+    setCanResendOtp(false);
     setLoginMethod("password");
   };
 
@@ -51,6 +91,8 @@ const Loginforsa = () => {
       otp: "",
     });
     setOtpSent(false);
+    setOtpTimer(0);
+    setCanResendOtp(false);
     setError("");
   };
 
@@ -214,6 +256,8 @@ const Loginforsa = () => {
       if (response.data.message) {
         toast.success(response.data.message);
         setOtpSent(true);
+        setOtpTimer(30); // Start 30-second timer
+        setCanResendOtp(false);
       }
     } catch (error) {
       console.error(error);
@@ -221,12 +265,43 @@ const Loginforsa = () => {
     }
   };
 
-  const handleForgotPasswordChange = (e) => {
-    const { name, value } = e.target;
-    setForgotPasswordData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+  const handleResendLoginOtp = async () => {
+    if (!canResendOtp) {
+      toast.warning("Please wait before requesting a new OTP");
+      return;
+    }
+
+    try {
+      const url = isSuperAdminLogin
+        ? `${BASE_URL}/api/superadmin/send-login-otp`
+        : `${BASE_URL}/api/salonadmin/send-login-otp`;
+
+      const response = await axios.post(url, {
+        mobilenumber: formData.mobilenumber,
+      });
+
+      if (response.data.message) {
+        toast.success("New OTP sent successfully!");
+        setOtpTimer(30); // Restart 30-second timer
+        setCanResendOtp(false);
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error(error.response?.data?.message || "Failed to resend OTP");
+    }
+  };
+
+  const closeForgotPasswordPopup = () => {
+    setShowForgotPasswordPopup(false);
+    setForgotPasswordOtpTimer(0);
+    setCanResendForgotPasswordOtp(false);
+    setForgotPasswordData({
+      mobileNumber: "",
+      newPassword: "",
+      confirmPassword: "",
+      otp: "",
+      otpVerified: false,
+    });
   };
 
   const handleSendOtp = async () => {
@@ -245,10 +320,38 @@ const Loginforsa = () => {
           ...prevData,
           otpVerified: false,
         }));
+        setForgotPasswordOtpTimer(30); // Start 30-second timer
+        setCanResendForgotPasswordOtp(false);
       }
     } catch (error) {
       console.error(error);
       toast.error(error.response.data.message || "Failed to send OTP");
+    }
+  };
+
+  const handleResendForgotPasswordOtp = async () => {
+    if (!canResendForgotPasswordOtp) {
+      toast.warning("Please wait before requesting a new OTP");
+      return;
+    }
+
+    const endpoint = isSuperAdminLogin
+      ? `${BASE_URL}/api/superadmin/forgot-password`
+      : `${BASE_URL}/api/salonadmin/forgot-password`;
+
+    try {
+      const response = await axios.post(endpoint, {
+        mobileNumber: forgotPasswordData.mobileNumber,
+      });
+
+      if (response.data.message) {
+        toast.success("New OTP sent successfully!");
+        setForgotPasswordOtpTimer(30); // Restart 30-second timer
+        setCanResendForgotPasswordOtp(false);
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error(error.response.data.message || "Failed to resend OTP");
     }
   };
 
@@ -278,6 +381,14 @@ const Loginforsa = () => {
     }
   };
 
+  const handleForgotPasswordChange = (e) => {
+    const { name, value } = e.target;
+    setForgotPasswordData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
   const handleForgotPasswordSubmit = async (e) => {
     e.preventDefault();
 
@@ -305,7 +416,7 @@ const Loginforsa = () => {
 
       if (response.data.message) {
         toast.success(response.data.message);
-        setShowForgotPasswordPopup(false);
+        closeForgotPasswordPopup();
       }
     } catch (error) {
       console.error("Error in password reset request:", error);
@@ -414,14 +525,21 @@ const Loginforsa = () => {
             disabled={!otpSent}
             required
           />
-          <button
-            type="button"
-            className="send-otp-btn"
-            onClick={handleSendLoginOtp}
-            disabled={!formData.mobilenumber || otpSent}
-          >
-            {otpSent ? "OTP Sent" : "Send OTP"}
-          </button>
+          <div className="otp-button-container">
+            <button
+              type="button"
+              className="send-otp-btn"
+              onClick={otpSent && canResendOtp ? handleResendLoginOtp : handleSendLoginOtp}
+              disabled={!formData.mobilenumber || (otpSent && !canResendOtp)}
+            >
+              {!otpSent 
+                ? "Send OTP"
+                : canResendOtp 
+                ? "Resend OTP" 
+                : `Resend in ${otpTimer}s`
+              }
+            </button>
+          </div>
         </div>
       )}
       
@@ -468,7 +586,7 @@ const Loginforsa = () => {
             <button
               className="btn-close23"
               type="button"
-              onClick={() => setShowForgotPasswordPopup(false)}
+              onClick={closeForgotPasswordPopup}
             >
               X
             </button>
@@ -484,13 +602,21 @@ const Loginforsa = () => {
                 disabled={forgotPasswordData.otpVerified}
                 className="input565"
               />
-              <button
-                type="button"
-                onClick={handleSendOtp}
-                className="send-otp-button"
-              >
-                Send OTP
-              </button>
+              <div className="forgot-password-otp-button-container">
+                <button
+                  type="button"
+                  onClick={forgotPasswordOtpTimer > 0 && canResendForgotPasswordOtp ? handleResendForgotPasswordOtp : handleSendOtp}
+                  className="send-otp-button"
+                  disabled={forgotPasswordOtpTimer > 0 && !canResendForgotPasswordOtp}
+                >
+                  {forgotPasswordOtpTimer === 0 
+                    ? "Send OTP"
+                    : canResendForgotPasswordOtp 
+                    ? "Resend OTP" 
+                    : `Resend in ${forgotPasswordOtpTimer}s`
+                  }
+                </button>
+              </div>
               <div className="otp-container">
                 <input
                   type="text"
