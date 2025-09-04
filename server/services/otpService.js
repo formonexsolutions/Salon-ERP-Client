@@ -71,33 +71,43 @@ const sendOtpWithFast2SMS = async (phoneNumber, otp) => {
   }
 };
 
-// TextLocal provider (free tier)
-const sendOtpWithTextLocal = async (phoneNumber, otp) => {
-  const { TEXTLOCAL_API_KEY } = process.env;
+// Twilio SMS provider (Primary - Most Reliable)
+const sendOtpWithTwilio = async (phoneNumber, otp) => {
+  const { TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NUMBER } = process.env;
   
-  if (!TEXTLOCAL_API_KEY || TEXTLOCAL_API_KEY === 'YOUR_TEXTLOCAL_API_KEY_HERE') {
-    throw new Error('TextLocal API key not configured');
+  if (!TWILIO_ACCOUNT_SID || !TWILIO_AUTH_TOKEN || !TWILIO_PHONE_NUMBER) {
+    throw new Error('Twilio credentials not configured');
   }
 
-  const message = `${otp} is your OTP for Salon ERP. Valid for 5 minutes. Do not share.`;
-  
   try {
-    const response = await axios.post('https://api.textlocal.in/send/', {
-      apikey: TEXTLOCAL_API_KEY,
-      numbers: phoneNumber,
-      message: message,
-      sender: 'SALON'
-    });
+    const response = await axios.post(
+      `https://api.twilio.com/2010-04-01/Accounts/${TWILIO_ACCOUNT_SID}/Messages.json`,
+      new URLSearchParams({
+        From: TWILIO_PHONE_NUMBER,
+        To: `+91${phoneNumber}`,
+        Body: `${otp} is your OTP for Salon ERP login/registration. Valid for 5 minutes. Do not share this OTP with anyone.`
+      }),
+      {
+        auth: {
+          username: TWILIO_ACCOUNT_SID,
+          password: TWILIO_AUTH_TOKEN
+        },
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
+      }
+    );
     
-    console.log('TextLocal Response:', response.data);
+    console.log('✅ Twilio Response:', response.data);
     
-    if (response.data.status === 'success') {
-      return { success: true, data: response.data };
+    if (response.data.sid) {
+      return { success: true, data: response.data, provider: 'Twilio' };
     } else {
-      throw new Error(`TextLocal failed: ${response.data.errors || 'Unknown error'}`);
+      throw new Error(`Twilio SMS failed: ${JSON.stringify(response.data)}`);
     }
   } catch (error) {
-    throw new Error(`TextLocal error: ${error.message}`);
+    console.error('❌ Twilio Error:', error.response?.data || error.message);
+    throw new Error(`Twilio error: ${error.response?.data?.message || error.message}`);
   }
 };
 
@@ -105,11 +115,11 @@ const sendOtpWithTextLocal = async (phoneNumber, otp) => {
 const sendOtp = async (phoneNumber, otp) => {
   console.log(`📱 Attempting to send OTP to ${phoneNumber}: ${otp}`);
 
-  // List of providers to try in order
+  // List of providers to try in order (Twilio first as it's most reliable)
   const providers = [
-    { name: 'MyLogin (Primary)', func: sendOtpWithMyLogin },
-    { name: 'Fast2SMS', func: sendOtpWithFast2SMS },
-    { name: 'TextLocal', func: sendOtpWithTextLocal }
+    { name: 'Twilio (Primary)', func: sendOtpWithTwilio },
+    { name: 'MyLogin', func: sendOtpWithMyLogin },
+    { name: 'Fast2SMS', func: sendOtpWithFast2SMS }
   ];
 
   let lastError = null;
@@ -120,6 +130,7 @@ const sendOtp = async (phoneNumber, otp) => {
       console.log(`🔄 Trying ${provider.name}...`);
       const result = await provider.func(phoneNumber, otp);
       console.log(`✅ ${provider.name} succeeded! OTP sent to ${phoneNumber}`);
+      console.log(`📧 SMS sent via ${result.provider || provider.name}`);
       return result;
     } catch (error) {
       console.log(`❌ ${provider.name} failed: ${error.message}`);
