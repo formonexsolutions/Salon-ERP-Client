@@ -23,6 +23,7 @@ const Subscription = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false); // State for popup
+  const [isProcessingPayment, setIsProcessingPayment] = useState(false);
 
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem("registeredData"));
@@ -97,8 +98,15 @@ const Subscription = () => {
       toast.error("Please select a plan.");
       return;
     }
-    if (termsAccepted) {
-      try {
+    
+    if (!termsAccepted) {
+      toast.error("Please accept the terms and conditions.");
+      return;
+    }
+
+    setIsProcessingPayment(true);
+    
+    try {
         const storedData = JSON.parse(localStorage.getItem("registeredData"));
         const phoneNumber = storedData ? storedData.phoneNumber : null;
 
@@ -128,9 +136,14 @@ const Subscription = () => {
         const orderData = response.data.order;
         const salon_id = response.data.salon_id;
 
-        // console.log("Order Data:", orderData);
-        // console.log("Salon ID:", salon_id);
-        const razorpayKey = process.env.RAZORPAY_KEY;
+        // Fetch Razorpay key from backend
+        const keyResponse = await axios.get(`${BASE_URL}/api/payment/getkey`);
+        const razorpayKey = keyResponse.data.key;
+
+        if (!razorpayKey) {
+          toast.error("Payment gateway configuration error. Please try again later.");
+          return;
+        }
 
         const options = {
           key: razorpayKey,
@@ -180,9 +193,9 @@ const Subscription = () => {
             }
           },
           prefill: {
-            name: "Amith K",
-            email: "amithk@matrical.in",
-            contact: "9036686725",
+            name: adminName || "Salon Admin",
+            email: "admin@onesalon.com",
+            contact: phoneNumber || "9999999999",
           },
           notes: {
             address:
@@ -203,10 +216,9 @@ const Subscription = () => {
       } catch (error) {
         console.error("Error in payment:", error);
         toast.error("Error initiating payment. Please try again.");
+      } finally {
+        setIsProcessingPayment(false);
       }
-    } else {
-      toast.error("Please accept the terms and conditions.");
-    }
   };
 
   const handleOpenPopup = () => {
@@ -338,8 +350,12 @@ const Subscription = () => {
                   Accept <u>Terms and Conditions</u>
                 </label>
               </div>
-              <button className="payment-button" onClick={handlePayment}>
-                Pay Now
+              <button 
+                className="payment-button" 
+                onClick={handlePayment}
+                disabled={isProcessingPayment}
+              >
+                {isProcessingPayment ? "Processing..." : "Pay Now"}
               </button>
               <p onClick={handleBackClick} className="backButton">
                 <IoArrowBackSharp />
